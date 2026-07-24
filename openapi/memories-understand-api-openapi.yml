@@ -1,0 +1,163 @@
+openapi: 3.1.0
+info:
+  title: Memories Platform API (Docs Mapping) Serve Understand API
+  version: v1
+  description: OpenAPI mapping used by Mintlify Try it for the platform docs.
+servers:
+- url: https://api.memories.ai
+security:
+- ApiKeyAuth: []
+tags:
+- name: Understand
+paths:
+  /v1/understand/upload:
+    post:
+      summary: Video Caption / Human Re-identification
+      operationId: video_caption_upload
+      servers:
+      - url: https://security.memories.ai
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoUnderstandingRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Understand
+  /v1/understand/uploadImg:
+    post:
+      summary: Image Caption
+      operationId: image_caption_upload
+      servers:
+      - url: https://security.memories.ai
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageUnderstandingRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Understand
+components:
+  schemas:
+    PersonInput:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Alice
+        url:
+          type: string
+          format: uri
+          example: https://example.com/alice.jpg
+      required:
+      - name
+    GenericJsonResponse:
+      type: object
+      properties:
+        code:
+          type:
+          - string
+          - integer
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          oneOf:
+          - type: object
+            additionalProperties: true
+          - type: array
+            items:
+              type: object
+              additionalProperties: true
+          - type: string
+          - type: 'null'
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      additionalProperties: true
+    VideoUnderstandingRequest:
+      type: object
+      properties:
+        video_url:
+          type: string
+          format: uri
+          example: https://example.com/test_video.mp4
+        user_prompt:
+          type: string
+          example: Summarize the video content and identify key persons
+        system_prompt:
+          type: string
+          example: You are a video understanding system.
+        callback:
+          type: string
+          format: uri
+          example: https://yourserver.com/callback
+        thinking:
+          type: boolean
+          default: false
+        qa:
+          type: boolean
+          default: false
+        reasoning_effort:
+          type: string
+          example: '2'
+        persons:
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonInput'
+      required:
+      - video_url
+      - user_prompt
+      - system_prompt
+    ImageUnderstandingRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          example: https://example.com/test_image.png
+        urls:
+          type: array
+          items:
+            type: string
+            format: uri
+        user_prompt:
+          type: string
+          example: What's happening in this picture?
+        system_prompt:
+          type: string
+          example: You are an image understanding system.
+        thinking:
+          type: boolean
+          default: false
+        qa:
+          type: boolean
+          default: false
+        reasoning_effort:
+          type: string
+          example: '2'
+      required:
+      - user_prompt
+  responses:
+    SuccessJson:
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericJsonResponse'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization

@@ -1,0 +1,2063 @@
+openapi: 3.1.0
+info:
+  title: Memories Platform API (Docs Mapping) Serve API
+  version: v1
+  description: OpenAPI mapping used by Mintlify Try it for the platform docs.
+servers:
+- url: https://api.memories.ai
+security:
+- ApiKeyAuth: []
+tags:
+- name: Serve
+paths:
+  /serve/api/v1/memories/add:
+    post:
+      summary: Add Memory
+      operationId: add_memory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddMemoryRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/get_audio_transcription:
+    get:
+      summary: Get Audio Transcription
+      operationId: get_audio_transcription
+      parameters:
+      - name: video_no
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The unique video ID returned by the upload API.
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/delete_videos:
+    post:
+      summary: Delete Videos
+      operationId: delete_videos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteVideosRequest'
+            example:
+            - VI1234567890
+            - VI0987654321
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/download:
+    post:
+      summary: Download Video
+      operationId: download_video
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadVideoRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/BinaryDownloadResponse'
+      tags:
+      - Serve
+  /serve/api/v1/get_video_ids_by_task_id:
+    get:
+      summary: Get Task Status
+      operationId: get_task_status
+      parameters:
+      - name: task_id
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The task ID returned by an upload or scraping request.
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/memories:
+    post:
+      summary: List Memories
+      operationId: list_memories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListMemoriesRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/get_metadata:
+    get:
+      summary: Get Video Metadata
+      operationId: get_video_metadata
+      parameters:
+      - name: video_no
+        in: query
+        required: true
+        schema:
+          type: string
+        example: VI606404158946574336
+        description: Video identifier. Must be non-empty.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMetadataResponse'
+      tags:
+      - Serve
+  /serve/api/v1/list_videos:
+    post:
+      summary: List Videos
+      operationId: list_videos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListVideosRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListVideosResponse'
+      tags:
+      - Serve
+  /serve/api/v1/chat_personal_stream:
+    post:
+      summary: Chat with Personal Media Entities
+      operationId: chat_personal_stream
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalMediaChatRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SseOrJsonResponse'
+      tags:
+      - Serve
+  /serve/api/v1/search_clips_by_image:
+    post:
+      summary: Search Clips by Image
+      operationId: search_clips_by_image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SearchClipsByImageRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchClipsByImageResponse'
+      tags:
+      - Serve
+  /serve/api/v1/search_audio_transcripts:
+    get:
+      summary: Search from Audio
+      operationId: search_audio_transcripts
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Audio transcript search text (LIKE match). Must be non-empty.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: One-based page number. Must be > 0.
+      - name: page_size
+        in: query
+        schema:
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 500
+        description: Results per page. Range 1-500.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchAudioTranscriptsResponse'
+      tags:
+      - Serve
+  /serve/api/v1/memories/search:
+    post:
+      summary: Search Memories
+      operationId: search_memories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchMemoriesRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/search:
+    post:
+      summary: Search from Private Library
+      operationId: search_private_library
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchPrivateRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchPrivateResponse'
+      tags:
+      - Serve
+  /serve/api/v1/search_public:
+    post:
+      summary: Search from Public Video Sources
+      operationId: search_public_library
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchPublicRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchPublicResponse'
+      tags:
+      - Serve
+  /serve/api/v1/search_public_similar_images:
+    post:
+      summary: Search Public Videos by Image
+      operationId: search_public_similar_images
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SearchSimilarImagesRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchSimilarImagesResponse'
+      tags:
+      - Serve
+  /serve/api/v1/upload_img:
+    post:
+      summary: Upload Image from File
+      operationId: upload_image_from_file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadImageRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadImageResponse'
+      tags:
+      - Serve
+  /serve/api/v1/scraper:
+    post:
+      summary: Upload Video from Platform Creator URL
+      operationId: upload_video_from_creator_url
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadVideoFromCreatorRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/upload:
+    post:
+      summary: Upload Video from File
+      operationId: upload_video_from_file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UploadVideoRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadVideoResponse'
+      tags:
+      - Serve
+  /serve/api/v1/scraper_tag:
+    post:
+      summary: Upload Video from Hashtag
+      operationId: upload_video_from_hashtag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadVideoFromHashtagRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/scraper_url:
+    post:
+      summary: Upload Video from Platform URL
+      operationId: upload_video_from_platform_url
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadVideoFromPlatformUrlRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScraperTaskResponse'
+      tags:
+      - Serve
+  /serve/api/v1/upload_url:
+    post:
+      summary: Upload Video from URL
+      operationId: upload_video_from_url
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UploadVideoFromUrlRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadVideoResponse'
+      tags:
+      - Serve
+  /serve/api/v1/chat:
+    post:
+      summary: Video Chat
+      operationId: video_chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoChatRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/marketer_chat:
+    post:
+      summary: Video Marketer
+      operationId: video_marketer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoMarketerRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/get_video_caption:
+    get:
+      summary: Get Video Caption
+      operationId: get_video_caption
+      parameters:
+      - name: video_no
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The unique video ID returned by the upload API.
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessJson'
+      tags:
+      - Serve
+  /serve/api/v1/folders:
+    get:
+      summary: List Folders
+      operationId: list_folders
+      description: List all folders in your account.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FolderListResponse'
+      tags:
+      - Serve
+  /serve/api/v1/folders/create:
+    post:
+      summary: Create Folder
+      operationId: create_folder
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                  maxLength: 100
+                  example: my-project
+                  description: Folder name. Max 100 chars, unique within your account.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FolderItemResponse'
+      tags:
+      - Serve
+  /serve/api/v1/folders/rename:
+    post:
+      summary: Rename Folder
+      operationId: rename_folder
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - folder_id
+              - new_name
+              properties:
+                folder_id:
+                  type: integer
+                  example: 671631448308117500
+                  description: Folder id to rename. Must be > 0 and belong to your account.
+                new_name:
+                  type: string
+                  maxLength: 100
+                  example: renamed-project
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FolderItemResponse'
+      tags:
+      - Serve
+  /serve/api/v1/folders/delete:
+    post:
+      summary: Delete Folder
+      operationId: delete_folder
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - folder_id
+              properties:
+                folder_id:
+                  type: integer
+                  example: 671631448308117500
+                  description: Folder id to delete. Must be > 0 and belong to your account. Fails if it contains parsed videos.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericJsonResponse'
+      tags:
+      - Serve
+  /serve/api/v1/folders/videos:
+    get:
+      summary: List Videos in Folder
+      operationId: list_folder_videos
+      parameters:
+      - name: folder_id
+        in: query
+        required: true
+        schema:
+          type: integer
+        example: 671631448308117500
+        description: Folder to list. -1 Default folder, -2 legacy API folder, or a folder that belongs to your account.
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+        description: One-based page number.
+      - name: page_size
+        in: query
+        schema:
+          type: integer
+          default: 20
+        description: Items per page.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListVideosResponse'
+      tags:
+      - Serve
+  /serve/api/v1/folders/move:
+    post:
+      summary: Move Videos to Folder
+      operationId: move_videos_to_folder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - folder_id
+              - video_nos
+              properties:
+                folder_id:
+                  type: integer
+                  example: 671631448308117500
+                  description: Target folder id. -1 = Default folder. Must already exist and belong to your account (not auto-created).
+                video_nos:
+                  type: array
+                  items:
+                    type: string
+                  maxItems: 500
+                  example:
+                  - VI671631448308117504
+                  description: Video identifiers to move. Max 500 per request.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericJsonResponse'
+      tags:
+      - Serve
+components:
+  schemas:
+    UploadVideoFromCreatorRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          example: https://www.tiktok.com/@cutshall73
+        scraper_cnt:
+          type: integer
+          default: 4
+        callback_url:
+          type: string
+          format: uri
+          example: https://your.app/callback
+        folder_id:
+          type: integer
+          description: Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - username
+    UploadImageResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+          description: Business status code. 0000 indicates success.
+        msg:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                format: int64
+                example: 568102998803353600
+                description: Unique numeric identifier of the uploaded image.
+          example:
+          - id: 568102998803353600
+          - id: 568102998803353600
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+        - id: 568102998803353600
+        - id: 568102998803353600
+        success: true
+        failed: false
+    FolderItem:
+      type: object
+      properties:
+        folder_id:
+          type: integer
+          example: 671631448308117500
+          description: Folder identifier. -1 = Default folder; -2 = legacy API folder (read-only).
+        folder_name:
+          type: string
+          example: my-project
+    UploadVideoFromHashtagRequest:
+      type: object
+      properties:
+        hash_tags:
+          type: array
+          items:
+            type: string
+          example:
+          - LVMH
+        scraper_cnt:
+          type: integer
+          default: 2
+        callback:
+          type: string
+          format: uri
+          example: https://your.app/callback
+        folder_id:
+          type: integer
+          description: Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - hash_tags
+    FlexibleFilter:
+      type: object
+      additionalProperties: true
+      description: Flexible filter object used by memories list and search endpoints.
+    MemoryEntryInput:
+      type: object
+      properties:
+        role:
+          type: string
+          example: Tester
+        content:
+          type: string
+          example: Starting testing today
+      required:
+      - role
+      - content
+    VideoMarketerRequest:
+      type: object
+      properties:
+        prompt:
+          type: string
+          example: What does nike recently post?
+        session_id:
+          type: string
+          example: ''
+        type:
+          type: string
+          enum:
+          - TIKTOK
+          - YOUTUBE
+          - INSTAGRAM
+          default: TIKTOK
+      required:
+      - prompt
+    SearchAudioTranscriptsResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            current_page:
+              type: integer
+              example: 1
+            page_size:
+              type: integer
+              example: 100
+            total_count:
+              type: integer
+              format: int64
+              example: 2
+            videos:
+              type: array
+              items:
+                type: object
+                properties:
+                  videoNo:
+                    type: string
+                    example: VI576925607808602112
+                  videoName:
+                    type: string
+                    example: '1920447021987282945'
+                  startTime:
+                    type: string
+                    example: '13'
+                    description: Matched segment start time in seconds.
+                  audio_ts:
+                    type: string
+                    example: '... where is the love ...'
+                    description: Matched transcript text.
+                  video_bucket:
+                    type: string
+                    description: GCS bucket of the original video file. Omitted when the storage location cannot be resolved.
+                  video_blob:
+                    type: string
+                    description: GCS blob (object) path of the original video. Use it with video_bucket at GET /serve/api/v2/download to fetch the file directly.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+          current_page: 1
+          page_size: 100
+          total_count: 2
+          videos:
+          - videoNo: VI576925607808602112
+            videoName: '1920447021987282945'
+            startTime: '13'
+            audio_ts: '... where is the love ...'
+            video_bucket: mavi-resource
+            video_blob: VI576925607808602112.mp4
+        success: true
+        failed: false
+    SearchClipsByImageRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          description: 'Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB.'
+        video_no:
+          type: string
+          example: VI625239098370850816
+          description: Unique identifier of the video to search within. Must be non-empty.
+        prompt:
+          type: string
+          example: focus on the red shirt, ignore background color
+          description: Natural-language prompt that refines the visual match. Must be non-empty. English recommended.
+      required:
+      - file
+      - video_no
+      - prompt
+    DeleteVideosRequest:
+      type: array
+      items:
+        type: string
+      description: Raw JSON array of video IDs to delete.
+    FolderListResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            folders:
+              type: array
+              items:
+                $ref: '#/components/schemas/FolderItem'
+    SearchPublicResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              videoNo:
+                type: string
+                example: PI-600947902470296459
+              videoName:
+                type: string
+                example: They played in their OPPONENTS jerseys?!?
+              startTime:
+                type: string
+                example: '23'
+              endTime:
+                type: string
+                example: '27'
+              audio_ts:
+                type: string
+                description: Matched audio transcript (populated for BY_AUDIO).
+              score:
+                type: number
+                format: double
+                example: 0.7350679636001586
+              video_bucket:
+                type: string
+                description: GCS bucket of our cached copy of the public video. Omitted when the storage location cannot be resolved.
+              video_blob:
+                type: string
+                description: GCS blob path of the cached video. Use with video_bucket at GET /serve/api/v2/download to fetch the file directly.
+              keyframe_bucket:
+                type: string
+                description: GCS bucket of the matched keyframe image (BY_CLIP only).
+              keyframe_blob:
+                type: string
+                description: GCS blob path of the matched keyframe image.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+        - videoNo: PI-600947902470296459
+          videoName: They played in their OPPONENTS jerseys?!?
+          startTime: '23'
+          endTime: '27'
+          audio_ts: '...matched transcript text...'
+          score: 0.7350679636001586
+          video_bucket: mavi-public-video
+          video_blob: <scraper-id>.mp4
+          keyframe_bucket: mavi-public-keyframe
+          keyframe_blob: <uuid>/keyframe-000023.jpg
+        success: true
+        failed: false
+    SearchMemoriesRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+          default: 1
+        page_size:
+          type: integer
+          default: 20
+        filters:
+          $ref: '#/components/schemas/FlexibleFilter'
+        query:
+          type: string
+          example: Technology
+      required:
+      - query
+    DownloadVideoRequest:
+      type: object
+      properties:
+        video_no:
+          type: string
+          example: VI625239098370850816
+      required:
+      - video_no
+    VideoChatRequest:
+      type: object
+      properties:
+        video_nos:
+          type: array
+          items:
+            type: string
+          example:
+          - VI625239098370850816
+        prompt:
+          type: string
+          example: Summarize the emotional moments in these videos
+        session_id:
+          type: string
+          example: session-123
+      required:
+      - video_nos
+      - prompt
+    UploadVideoResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+          description: Business status code. 0000 indicates success.
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            videoNo:
+              type: string
+              example: VI568102998803353600
+              description: Unique identifier of the uploaded video. Use this for all subsequent operations.
+            videoName:
+              type: string
+              example: 1be6a69f3c6e49bf986235d68807ab1f
+              description: Internal stored name of the video.
+            videoStatus:
+              type: string
+              example: UNPARSE
+              description: Initial processing status. UNPARSE immediately after upload; transitions to parsing asynchronously.
+            uploadTime:
+              type: string
+              example: '1744905509814'
+              description: Upload timestamp in milliseconds since epoch (as string).
+          example:
+            videoNo: VI568102998803353600
+            videoName: 1be6a69f3c6e49bf986235d68807ab1f
+            videoStatus: UNPARSE
+            uploadTime: '1744905509814'
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+          videoNo: VI568102998803353600
+          videoName: 1be6a69f3c6e49bf986235d68807ab1f
+          videoStatus: UNPARSE
+          uploadTime: '1744905509814'
+        success: true
+        failed: false
+    ListVideosRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+          default: 1
+          minimum: 1
+          description: One-based page number. Must be > 0.
+        size:
+          type: integer
+          default: 200
+          minimum: 1
+          description: Items per page. Must be > 0.
+        video_name:
+          type: string
+          description: Exact-match filter on the stored video name.
+        video_no:
+          type: string
+          description: Exact-match filter on a single video identifier.
+        video_nos:
+          type: array
+          items:
+            type: string
+          description: Restrict results to a specific set of video identifiers. Combined via AND with other filters; intersected with the metadata-filter result when both are used.
+          example:
+          - VI606404158946574336
+          - VI606402870447996928
+        status:
+          type: string
+          enum:
+          - PARSE
+          - UNPARSE
+          - FAILED
+          description: Filter by processing status.
+        camera_model:
+          type: string
+          example: Canon EOS 5D
+          description: 'Metadata filter: exact-match on the camera_model supplied at upload time.'
+        tag:
+          type: string
+          example: holiday
+          description: 'Metadata filter: single tag that must be present on the video.'
+        datetime_taken:
+          type: integer
+          format: int64
+          example: 1729388400000
+          description: 'Metadata filter: minimum capture timestamp in milliseconds since epoch. Matches videos whose capture_timestamp >= this value.'
+        latitude:
+          type: number
+          format: double
+          example: 39.9042
+          description: 'Metadata filter: decimal latitude. Must be supplied together with longitude.'
+        longitude:
+          type: number
+          format: double
+          example: 116.4074
+          description: 'Metadata filter: decimal longitude. Must be supplied together with latitude. ~20 km geo-within radius.'
+        folder_id:
+          type: integer
+          description: Optional. Restrict results to a single folder. Omit to query across your entire account. -1 is the Default folder; a positive id must belong to your account.
+          example: 671631448308117500
+    PersonalMediaChatRequest:
+      type: object
+      properties:
+        session_id:
+          type: string
+          example: ''
+        prompt:
+          type: string
+          example: When did I went to the beach?
+      required:
+      - prompt
+    SearchPrivateRequest:
+      type: object
+      properties:
+        search_param:
+          type: string
+          example: boat in the ocean
+          description: Natural-language search query. Must be non-empty.
+        search_type:
+          type: string
+          enum:
+          - BY_VIDEO
+          - BY_CLIP
+          - BY_AUDIO
+          - BY_IMAGE
+          - BY_CAPTION
+          default: BY_CLIP
+          example: BY_CLIP
+          description: Search modality. BY_VIDEO is treated as BY_CLIP internally. BY_CAPTION performs vector search over the video_transcript table and returns a different item shape (see response).
+        top_k:
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 1000
+          description: Maximum number of results to return. Range 1-1000 for BY_CLIP/BY_AUDIO/BY_IMAGE. For BY_CAPTION the range is 1-200 (server-side default is 10 when null).
+        filtering_level:
+          type: string
+          enum:
+          - low
+          - medium
+          - high
+          example: medium
+          description: Similarity-score filter. low=0.15, medium=0.225, high=0.4.
+        video_nos:
+          type: array
+          items:
+            type: string
+          maxItems: 100
+          example:
+          - VI635764894954369024
+          description: Optional list of video numbers to restrict the search to. Max 100.
+        tag:
+          type: string
+          example: test1
+          description: Optional tag filter.
+        camera_tag:
+          type: string
+          example: Canon EOS 5D
+          description: Optional camera/device model filter. Matches the camera_model supplied at upload time.
+        datetime_taken:
+          type: string
+          example: '2025-10-20 11:00:00'
+          description: Optional capture-time filter in format yyyy-MM-dd HH:mm:ss.
+        latitude:
+          type: number
+          format: double
+          example: 88.88
+          description: Optional latitude filter. Must be supplied together with longitude.
+        longitude:
+          type: number
+          format: double
+          example: 88.88
+          description: Optional longitude filter. Must be supplied together with latitude.
+        folder_id:
+          type: integer
+          description: Optional. Restrict results to a single folder. Omit to query across your entire account. -1 is the Default folder; a positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - search_param
+    SearchPrivateResponse:
+      type: object
+      description: Response shape depends on search_type. For BY_CLIP / BY_VIDEO / BY_AUDIO `data` is an array of video-search items (carries video_bucket/video_blob and, for BY_CLIP, keyframe_bucket/keyframe_blob); for BY_IMAGE `data` is a paginated image-search object (items carry bucket/blob); for BY_CAPTION `data` is an array of caption-search items carrying the embedding vector, text, user_id, and time range.
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          oneOf:
+          - type: array
+            items:
+              type: object
+              properties:
+                videoNo:
+                  type: string
+                  example: VI576925607808602112
+                videoName:
+                  type: string
+                  example: '1920447021987282945'
+                startTime:
+                  type: string
+                  example: '13'
+                  description: Matched segment start time in seconds.
+                endTime:
+                  type: string
+                  example: '18'
+                  description: Matched segment end time in seconds.
+                audio_ts:
+                  type: string
+                  description: Matched audio transcript (BY_AUDIO).
+                score:
+                  type: number
+                  format: double
+                  example: 0.5221236659362116
+                video_bucket:
+                  type: string
+                  description: GCS bucket of the original video file. Omitted when the storage location cannot be resolved.
+                video_blob:
+                  type: string
+                  description: GCS blob path of the original video. Use with video_bucket at GET /serve/api/v2/download to fetch the file directly.
+                keyframe_bucket:
+                  type: string
+                  description: GCS bucket of the matched keyframe image (BY_CLIP only).
+                keyframe_blob:
+                  type: string
+                  description: GCS blob path of the matched keyframe image.
+          - type: object
+            properties:
+              current_page:
+                type: integer
+                example: 0
+              page_size:
+                type: integer
+                example: 20
+              total_count:
+                type: integer
+                format: int64
+                example: 5
+              item:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 619915496901337100
+                    name:
+                      type: string
+                      example: OIX_ZOOM
+                    img_url:
+                      type: string
+                      example: https://storage.googleapis.com/.../OIX_ZOOM.jpg?...
+                    datetime_taken:
+                      type: integer
+                      format: int64
+                      example: 1757285520000
+                    camera_model:
+                      type: string
+                      example: Canon EOS 5D
+                    latitude:
+                      type: number
+                      format: double
+                      example: 39.9042
+                    longitude:
+                      type: number
+                      format: double
+                      example: 116.4074
+                    score:
+                      type: number
+                      format: double
+                      example: 0.4711
+                    bucket:
+                      type: string
+                      description: GCS bucket of the image.
+                    blob:
+                      type: string
+                      description: GCS blob path of the image. Use with bucket at GET /serve/api/v2/download to fetch the file directly.
+          - type: array
+            description: BY_CAPTION response items.
+            items:
+              type: object
+              properties:
+                video_no:
+                  type: string
+                  example: VI576925607808602112
+                text:
+                  type: string
+                  description: Matched caption segment text.
+                vector:
+                  type: array
+                  items:
+                    type: number
+                  description: Stored embedding vector of the matched caption row. Dimensionality depends on the embedding model.
+                user_id:
+                  type: string
+                  description: Internal MD5-encoded user namespace identifier.
+                start_time:
+                  type: number
+                  format: double
+                  description: Caption start time in seconds.
+                end_time:
+                  type: number
+                  format: double
+                  description: Caption end time in seconds.
+                score:
+                  type: number
+                  format: double
+                  description: Similarity score (1 - distance).
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+        - videoNo: VI576925607808602112
+          videoName: '1920447021987282945'
+          startTime: '13'
+          endTime: '18'
+          audio_ts: '...matched transcript text...'
+          score: 0.5221236659362116
+          video_bucket: mavi-resource
+          video_blob: VI576925607808602112.mp4
+          keyframe_bucket: mavi-keyframe
+          keyframe_blob: <uuid>/keyframe-000013.jpg
+        success: true
+        failed: false
+    SearchSimilarImagesResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              videoNo:
+                type: string
+                example: PI-600947902470296459
+              videoName:
+                type: string
+                example: Sample public video title
+              startTime:
+                type: string
+                example: '79'
+              endTime:
+                type: string
+                example: '82'
+              score:
+                type: number
+                format: double
+                example: 0.8631
+              video_bucket:
+                type: string
+                description: GCS bucket of our cached copy of the public video. Omitted when the storage location cannot be resolved.
+              video_blob:
+                type: string
+                description: GCS blob path of the cached video. Use with video_bucket at GET /serve/api/v2/download to fetch the file directly.
+              keyframe_bucket:
+                type: string
+                description: GCS bucket of the matched keyframe image.
+              keyframe_blob:
+                type: string
+                description: GCS blob path of the matched keyframe image.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+        - videoNo: PI-600947902470296459
+          videoName: Sample public video title
+          startTime: '79'
+          endTime: '82'
+          score: 0.8631
+          video_bucket: mavi-public-video
+          video_blob: <scraper-id>.mp4
+          keyframe_bucket: mavi-public-keyframe
+          keyframe_blob: <uuid>/keyframe-000079.jpg
+        - videoNo: PI-600947902470296460
+          videoName: Another public video
+          startTime: '32'
+          endTime: '35'
+          score: 0.8712
+          video_bucket: mavi-public-video
+          video_blob: <scraper-id2>.mp4
+          keyframe_bucket: mavi-public-keyframe
+          keyframe_blob: <uuid2>/keyframe-000032.jpg
+        success: true
+        failed: false
+    ListMemoriesRequest:
+      type: object
+      properties:
+        page:
+          type: integer
+          default: 1
+        page_size:
+          type: integer
+          default: 20
+        filters:
+          $ref: '#/components/schemas/FlexibleFilter'
+      required: []
+    UploadVideoFromPlatformUrlRequest:
+      type: object
+      properties:
+        video_urls:
+          type: array
+          items:
+            type: string
+            format: uri
+          maxItems: 50
+          example:
+          - https://www.tiktok.com/@cutshall73/video/7543017294226558221
+          - https://www.tiktok.com/@abcnews/video/7543794552365124919
+          description: Platform video URLs. Merged with tiktok_post_urls; combined list must be non-empty and <= 50. All URLs must be from the same platform.
+        tiktok_post_urls:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Optional TikTok post URLs. Server merges these into video_urls before processing. Counts toward the 50-URL cap.
+        callback_url:
+          type: string
+          format: uri
+          example: https://your.app/callback
+          description: Callback URL for task-complete and per-video indexing-complete notifications.
+        quality:
+          type: string
+          enum:
+          - '360'
+          - '480'
+          - '720'
+          - '1080'
+          - '1440'
+          - '2160'
+          default: '360'
+          example: '1080'
+          description: Target video resolution. Must be one of 360/480/720/1080/1440/2160 (string).
+        folder_id:
+          type: integer
+          description: Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - video_urls
+    GetMetadataResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          nullable: true
+          properties:
+            video_no:
+              type: string
+              example: VI606404158946574336
+            video_name:
+              type: string
+              example: 182082-867762198_tiny
+            duration:
+              type: integer
+              format: int64
+              example: 12
+              description: Duration in seconds.
+            size:
+              type: integer
+              format: int64
+              example: 3284512
+              description: File size in bytes.
+            create_time:
+              type: integer
+              format: int64
+              example: 1754037217992
+              description: Upload time (ms since epoch).
+            status:
+              type: string
+              enum:
+              - PARSE
+              - UNPARSE
+              - FAILED
+              example: PARSE
+            cause:
+              type: string
+              description: Only present when status=FAILED.
+            resolution_label:
+              type: string
+              example: 720P
+            fps:
+              type: integer
+              example: 30
+            width:
+              type: integer
+              example: 1280
+            height:
+              type: integer
+              example: 720
+            datetime_taken:
+              type: integer
+              format: int64
+              example: 1729388400000
+              description: Capture timestamp (ms since epoch). Only present when available.
+            camera_model:
+              type: string
+              example: Canon EOS 5D
+              description: Only present when available.
+            latitude:
+              type: number
+              format: double
+              example: 39.9042
+              description: Only present when available.
+            longitude:
+              type: number
+              format: double
+              example: 116.4074
+              description: Only present when available.
+            tags:
+              type: array
+              items:
+                type: string
+              example:
+              - holiday
+              - beijing
+              - api
+              description: Only present when non-empty.
+            bucket:
+              type: string
+              description: GCS bucket of the video file. Omitted when the storage location cannot be resolved.
+            blob:
+              type: string
+              description: GCS blob path of the video. Use with bucket at GET /serve/api/v2/download to fetch the file directly.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+          video_no: VI606404158946574336
+          video_name: 182082-867762198_tiny
+          duration: 12
+          size: 3284512
+          status: PARSE
+          create_time: 1754037217992
+          resolution_label: 720P
+          fps: 30
+          width: 1280
+          height: 720
+          datetime_taken: 1729388400000
+          camera_model: Canon EOS 5D
+          latitude: 39.9042
+          longitude: 116.4074
+          tags:
+          - holiday
+          - beijing
+          - api
+          bucket: mavi-resource
+          blob: VI606404158946574336.mp4
+        success: true
+        failed: false
+    UploadVideoFromUrlRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          example: https://example.com/test_video.mp4
+          description: Direct URL of the video. Must be reachable via unauthenticated HTTP GET.
+        callback:
+          type: string
+          format: uri
+          maxLength: 299
+          example: https://your.app/callback
+          description: Callback URL invoked when the video moves to the parsing stage. Max 299 characters.
+        datetime_taken:
+          type: string
+          example: '2025-10-20 11:00:00'
+          description: Capture time in format yyyy-MM-dd HH:mm:ss.
+        camera_model:
+          type: string
+          maxLength: 200
+          example: Canon EOS 5D
+          description: Camera/device model. Max 200 characters.
+        latitude:
+          type: number
+          format: double
+          example: 66.66
+        longitude:
+          type: number
+          format: double
+          example: 66.66
+        tags:
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example:
+          - test1
+          - test2
+          description: User-defined tags. Max 20. The server automatically appends an 'api' tag.
+        retain_original_video:
+          type: boolean
+          default: true
+          description: Whether to retain the original source video. Defaults to true.
+        video_transcription_prompt:
+          type: string
+          example: Focus on the speaker and major scene changes.
+        folder_id:
+          type: integer
+          description: Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - url
+    FolderItemResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          $ref: '#/components/schemas/FolderItem'
+    AddMemoryRequest:
+      type: object
+      properties:
+        memories:
+          type: array
+          items:
+            $ref: '#/components/schemas/MemoryEntryInput'
+        tags:
+          type: array
+          items:
+            type: string
+          example:
+          - test-tag
+        latitude:
+          type: string
+          example: '3.2028'
+        longitude:
+          type: string
+          example: '73.2207'
+        memories_at:
+          type: string
+          format: date-time
+          example: '2025-11-17T17:00:00Z'
+      required:
+      - memories
+    GenericJsonResponse:
+      type: object
+      properties:
+        code:
+          type:
+          - string
+          - integer
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          oneOf:
+          - type: object
+            additionalProperties: true
+          - type: array
+            items:
+              type: object
+              additionalProperties: true
+          - type: string
+          - type: 'null'
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      additionalProperties: true
+    SearchClipsByImageResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              start_time:
+                type: number
+                format: double
+                example: 12.5
+                description: Clip start time in seconds.
+              end_time:
+                type: number
+                format: double
+                example: 18.2
+                description: Clip end time in seconds.
+              score:
+                type: number
+                format: double
+                example: 0.8631
+                description: Similarity score.
+              video_bucket:
+                type: string
+                description: GCS bucket of the target video file. Omitted when the storage location cannot be resolved.
+              video_blob:
+                type: string
+                description: GCS blob path of the target video. Use with video_bucket at GET /serve/api/v2/download to fetch the file directly.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+        - start_time: 12.5
+          end_time: 18.2
+          score: 0.8631
+          video_bucket: mavi-resource
+          video_blob: VI576925607808602112.mp4
+        - start_time: 42
+          end_time: 47.8
+          score: 0.8124
+          video_bucket: mavi-resource
+          video_blob: VI576925607808602112.mp4
+        success: true
+        failed: false
+    ListVideosResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            current_page:
+              type: integer
+              example: 1
+            page_size:
+              type: integer
+              example: 20
+            total_count:
+              type: integer
+              format: int64
+              example: 2
+            videos:
+              type: array
+              items:
+                type: object
+                properties:
+                  video_no:
+                    type: string
+                    example: VI606404158946574336
+                  video_name:
+                    type: string
+                    example: 182082-867762198_tiny
+                  duration:
+                    type: integer
+                    format: int64
+                    example: 12
+                    description: Video duration in seconds.
+                  size:
+                    type: integer
+                    format: int64
+                    example: 3284512
+                    description: File size in bytes.
+                  create_time:
+                    type: integer
+                    format: int64
+                    example: 1754037217992
+                    description: Upload time in ms since epoch.
+                  status:
+                    type: string
+                    enum:
+                    - PARSE
+                    - UNPARSE
+                    - FAILED
+                    example: PARSE
+                  cause:
+                    type: string
+                    description: Failure reason — only present when status=FAILED.
+                  video_url:
+                    type: string
+                    description: Download URL — only present when available.
+                  datetime_taken:
+                    type: integer
+                    format: int64
+                    example: 1729388400000
+                    description: Capture timestamp (ms since epoch). Only present when available.
+                  camera_model:
+                    type: string
+                    example: Canon EOS 5D
+                    description: Camera/device model. Only present when available.
+                  latitude:
+                    type: number
+                    format: double
+                    example: 39.9042
+                    description: Decimal latitude. Only present when available.
+                  longitude:
+                    type: number
+                    format: double
+                    example: 116.4074
+                    description: Decimal longitude. Only present when available.
+                  tags:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                    - holiday
+                    - beijing
+                    - api
+                    description: User-defined tags. Only present when non-empty.
+                  bucket:
+                    type: string
+                    description: GCS bucket of the original video file. Omitted when the storage location cannot be resolved.
+                  blob:
+                    type: string
+                    description: GCS blob path of the video file. Use with bucket at GET /serve/api/v2/download to fetch the file directly.
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+          current_page: 1
+          page_size: 20
+          total_count: 2
+          videos:
+          - video_no: VI606404158946574336
+            video_name: 182082-867762198_tiny
+            duration: 12
+            size: 3284512
+            status: PARSE
+            create_time: 1754037217992
+            datetime_taken: 1729388400000
+            camera_model: Canon EOS 5D
+            latitude: 39.9042
+            longitude: 116.4074
+            tags:
+            - holiday
+            - beijing
+            - api
+            bucket: mavi-resource
+            blob: VI606404158946574336.mp4
+          - video_no: VI606402870447996928
+            video_name: test_video_gz_visual_understanding_s36
+            duration: 61
+            size: 5324808
+            status: PARSE
+            create_time: 1754036910783
+            bucket: mavi-resource
+            blob: VI606402870447996928.mp4
+        success: true
+        failed: false
+    SearchSimilarImagesRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          description: 'Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB.'
+        type:
+          type: string
+          enum:
+          - TIKTOK
+          - YOUTUBE
+          - INSTAGRAM
+          default: TIKTOK
+          description: Source platform to search within.
+        similarity:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          default: 0.85
+          description: Minimum similarity threshold (0-1). Results below this score are filtered out.
+      required:
+      - file
+    UploadImageRequest:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+            format: binary
+          description: 'One or more image files. Allowed extensions: .jpg, .jpeg, .png, .gif, .bmp, .webp. Content-Type must start with image/. Max 20 MB per file. Batch size capped by server configuration.'
+        datetime_taken:
+          type: string
+          example: '2025-09-07 22:52:00'
+          description: Capture time in format yyyy-MM-dd HH:mm:ss.
+        camera_model:
+          type: string
+          maxLength: 200
+          example: Canon EOS 5D
+          description: Camera/device model. Max 200 characters.
+        latitude:
+          type: number
+          format: double
+          example: 39.9042
+        longitude:
+          type: number
+          format: double
+          example: 116.4074
+        tags:
+          type: array
+          items:
+            type: string
+          maxItems: 50
+          example:
+          - test1
+          - test2
+          description: User-defined tags. Max 50. The server automatically appends an 'api' tag.
+      required:
+      - files
+    ScraperTaskResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          example: '0000'
+          description: Business status code. 0000 indicates success.
+        msg:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            taskId:
+              type: string
+              example: 31b0fccb-d6f9-4135-922d-1e8828499812
+              description: Unique identifier of the scraping task.
+          example:
+            taskId: 31b0fccb-d6f9-4135-922d-1e8828499812
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      example:
+        code: '0000'
+        msg: success
+        data:
+          taskId: 31b0fccb-d6f9-4135-922d-1e8828499812
+        success: true
+        failed: false
+    UploadVideoRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          description: 'Video file to upload. Allowed extensions: .mp4, .avi, .mkv, .mov. Content-Type must start with video/. Max size 3 GB.'
+        callback:
+          type: string
+          format: uri
+          maxLength: 299
+          example: https://your.app/callback
+          description: Callback URL invoked when the video moves to the parsing stage. Max 299 characters.
+        datetime_taken:
+          type: string
+          example: '2025-10-20 11:00:00'
+          description: Capture time in format yyyy-MM-dd HH:mm:ss.
+        camera_model:
+          type: string
+          maxLength: 200
+          example: Canon EOS 5D
+          description: Camera/device model. Max 200 characters.
+        latitude:
+          type: number
+          format: double
+          example: 66.66
+        longitude:
+          type: number
+          format: double
+          example: 66.66
+        tags:
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example:
+          - test1
+          - test2
+          description: User-defined tags. Max 20. The server automatically appends an 'api' tag.
+        retain_original_video:
+          type: boolean
+          default: true
+        video_transcription_prompt:
+          type: string
+          example: Focus on the speaker and major scene changes.
+        folder_id:
+          type: integer
+          description: Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.
+          example: 671631448308117500
+      required:
+      - file
+    SearchPublicRequest:
+      type: object
+      properties:
+        search_param:
+          type: string
+          example: Find sprint race with Usain Bolt
+          description: Natural-language search query. Must be non-empty.
+        search_type:
+          type: string
+          enum:
+          - BY_VIDEO
+          - BY_AUDIO
+          default: BY_CLIP
+          example: BY_VIDEO
+          description: Search modality. Only BY_VIDEO and BY_AUDIO are accepted here; BY_CLIP and BY_IMAGE are explicitly rejected. BY_VIDEO is treated as BY_CLIP internally.
+        type:
+          type: string
+          enum:
+          - TIKTOK
+          - YOUTUBE
+          - INSTAGRAM
+          default: TIKTOK
+          description: Source platform to search within.
+        top_k:
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 1000
+          description: Maximum number of results to return. Range 1-1000.
+        filtering_level:
+          type: string
+          enum:
+          - low
+          - medium
+          - high
+          example: medium
+          description: Similarity-score filter. low=0.15, medium=0.225, high=0.4.
+      required:
+      - search_param
+  responses:
+    BinaryDownloadResponse:
+      description: Binary video stream or JSON error response
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericJsonResponse'
+    SseOrJsonResponse:
+      description: Streaming SSE response or JSON response
+      content:
+        text/event-stream:
+          schema:
+            type: string
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericJsonResponse'
+    SuccessJson:
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GenericJsonResponse'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
