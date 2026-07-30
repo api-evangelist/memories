@@ -1,25 +1,141 @@
 aid: memories
 name: Memories
-description: Memories is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Memories.ai (MAVI) is a video-intelligence platform that turns raw video into
+  searchable, agent-ready understanding. It ships three products on a shared
+  video-understanding stack: Visual Intelligence (stateless REST APIs for
+  transcription, captioning, frame description, embeddings, social-media
+  scraping, and real-time audio/video stream moderation via VLMs such as Gemini,
+  Nova, and Qwen), Visual Search (an auto-indexed private and public video/image
+  library searchable by text, image, or transcript), and Visual Agents
+  (pre-built workflows for video search, AI video editing, and screenplay
+  extraction). The platform authenticates with sk-mavi- API keys, bills on a
+  unified per-endpoint credit model, and is HIPAA, SOC 2 Type 2, and GDPR
+  compliant. It is a Seedcamp portfolio company.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://mintcdn.com/memories/xyhRN3OJaXxxzcxh/logo/logo.png
 url: https://raw.githubusercontent.com/api-evangelist/memories/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
-x-tier: stub
-x-tier-reason: portfolio-lead
-specificationVersion: '0.20'
-created: '2026-07-17'
-modified: '2026-07-17'
 tags:
 - Company
-apis: []
+- Video Intelligence
+- Video Understanding
+- Video Search
+- Transcription
+- Embeddings
+- Multimodal AI
+- Content Moderation
+- AI Agents
+- Machine Learning
+created: '2026-07-17'
+modified: '2026-07-20'
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: memories:memories-serve-api
+  name: Memories Serve API
+  description: The Serve API from Memories — 30 operation(s) for serve.
+  humanURL: https://api-tools.memories.ai/visual-search/introduction
+  baseURL: https://api.memories.ai
+  tags:
+  - Serve
+  properties:
+  - type: OpenAPI
+    url: openapi/memories-serve-api-openapi.yml
+- aid: memories:memories-stream-understanding-api
+  name: Memories Stream Understanding API
+  description: The Stream Understanding API from Memories — 2 operation(s) for stream understanding.
+  humanURL: https://api-tools.memories.ai/visual-search/introduction
+  baseURL: https://api.memories.ai
+  tags:
+  - Stream Understanding
+  properties:
+  - type: OpenAPI
+    url: openapi/memories-stream-understanding-api-openapi.yml
+- aid: memories:memories-understand-api
+  name: Memories Understand API
+  description: The Understand API from Memories — 2 operation(s) for understand.
+  humanURL: https://api-tools.memories.ai/visual-search/introduction
+  baseURL: https://api.memories.ai
+  tags:
+  - Understand
+  properties:
+  - type: OpenAPI
+    url: openapi/memories-understand-api-openapi.yml
 common:
+- type: TrustCenter
+  url: security/memories-trust-center.yml
+- type: DeveloperPortal
+  url: https://api-platform.memories.ai/
+- type: Documentation
+  url: https://api-tools.memories.ai/
+- type: APIReference
+  url: https://api-tools.memories.ai/visual-intelligence/getting-started/overview
+- type: GettingStarted
+  url: https://api-tools.memories.ai/visual-intelligence/getting-started/introduction
+- type: SignUp
+  url: https://api-platform.memories.ai/
+- type: Pricing
+  url: https://api-tools.memories.ai/visual-search/pricing
+- type: GitHubOrganization
+  url: https://github.com/Memories-ai-labs
+- type: Compliance
+  url: https://memories.ai/security
+- type: Authentication
+  url: authentication/memories-authentication.yml
+- type: AgenticAccess
+  url: agentic-access/memories-agentic-access.yml
+- type: Packages
+  url: packages/memories-packages.yml
+- type: CLI
+  url: cli/memories-cli.yml
+- type: MCPServer
+  url: mcp/memories-mcp.yml
+- type: LLMsTxt
+  url: llms/memories-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/memories-webhooks.yml
+- type: ErrorCatalog
+  url: errors/memories-error-codes.yml
+- type: Conventions
+  url: conventions/memories-conventions.yml
+- type: RateLimits
+  url: rate-limits/memories-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/memories-lifecycle.yml
+- type: Conformance
+  url: conformance/memories-conformance.yml
+- type: DataModel
+  url: data-model/memories-data-model.yml
+- type: DomainSecurity
+  url: security/memories-domain-security.yml
+- type: WellKnown
+  url: well-known/memories-well-known.yml
+- type: Overlay
+  url: overlays/memories-platform-overlay.yaml
 - type: Website
   url: http://memories.ai
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 21
+  pass: local-v1
