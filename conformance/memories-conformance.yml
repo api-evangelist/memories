@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://memories.ai/security, openapi/memories-platform-openapi.json
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: Listed on the Memories.ai security/trust page.
+- id: hipaa
+  conforms: true
+  evidence: Listed on the Memories.ai security/trust page.
+- id: gdpr
+  conforms: true
+  evidence: Listed on the Memories.ai security/trust page.
+- id: apikey-auth
+  conforms: true
+  evidence: OpenAPI securitySchemes declare apiKey (Authorization header).
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme; static API keys only.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {code,msg,data,success,failed} envelope, not application/problem+json.
+- id: openapi-3
+  conforms: true
+  evidence: Publishes OpenAPI 3.1 (platform) and 3.0 (stream understanding) specs.
+- id: webhooks
+  conforms: true
+  evidence: Documents async webhook callbacks for nine long-running operations.

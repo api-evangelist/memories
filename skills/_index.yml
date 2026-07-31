@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/Memories-ai-labs/Memories-skills
+note: >-
+  Provider-published Agent Skill saved verbatim. Memories.ai ships an official
+  "Video Intelligence Platform" skill (SKILL.md) compatible with OpenClaw,
+  Claude Code, Cursor, and the Skills.sh standard, driving the memories CLI over
+  the v1 (Visual Search) and v2 (Visual Intelligence) APIs.
+skills:
+- file: memories-video-intelligence-platform.md
+  name: Video Intelligence Platform
+  slug: video-intelligence-platform
+  version: 1.5.1
+  api: openapi/memories-platform-openapi.json
+  operations:
+  - upload_video_from_url
+  - upload_video_from_file
+  - list_videos
+  - search_private_library
+  - search_public_library
+  - get_audio_transcription
+  - get_video_caption
+  - video_chat

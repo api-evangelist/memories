@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tools.memories.ai/visual-search/error-codes
+format: custom-envelope
+envelope:
+  fields:
+  - name: code
+    description: String status code; "0000" indicates success.
+  - name: msg
+    description: Human-readable status/error message.
+  - name: data
+    description: Endpoint-specific result payload; null on error.
+  - name: success
+    description: Boolean success indicator.
+  - name: failed
+    description: Boolean failure indicator.
+  example: '{"code":"0001","msg":"No static resource api.","data":null,"success":false,"failed":true}'
+  note: >-
+    Errors are returned with HTTP 200 and a non-"0000" code in the envelope
+    (application-level error signaling), except infrastructure errors which use
+    standard HTTP status (404/503 with a Spring-style {timestamp,path,status,
+    error,requestId} body).
+codes:
+- code: '0000'
+  meaning: Operation completed successfully
+- code: '0001'
+  meaning: Invalid or missing request parameters
+- code: '0003'
+  meaning: Invalid or missing request parameters
+- code: '0401'
+  meaning: Authentication credentials are invalid or absent
+- code: '0402'
+  meaning: Insufficient account credits
+- code: '0403'
+  meaning: Developer account has been deactivated
+- code: '0409'
+  meaning: Repeated operation attempt (non-repeatable action)
+- code: '0429'
+  meaning: Request frequency exceeds allowed limits (rate limit)
+- code: '9009'
+  meaning: API key lacks required permissions
+- code: '16'
+  meaning: Stream processing capacity reached (stream understanding only)

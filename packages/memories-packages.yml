@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/Memories-ai-labs/memories-cli
+packages:
+- language: python
+  registry: github
+  name: memories-cli
+  url: https://github.com/Memories-ai-labs/memories-cli
+  install: curl -fsSL https://raw.githubusercontent.com/Memories-ai-labs/memories-cli/main/install.sh | sh
+  binary: memories
+  version: 0.1.3
+  official: true
+  notes: >-
+    JSON-first Python CLI for the memories.ai v1, v2, and raw HTTP workflows.
+    Distributed via GitHub Releases (darwin-arm64, linux-x64) and source install;
+    not published to PyPI as of this pass. Configured with MEMORIES_API_KEY.
+notes: >-
+  No first-party language SDK library is published to npm/PyPI/etc.; the
+  official client surface is the memories-cli command-line tool. The `mavi`
+  PyPI package is an unrelated third-party project (different author) and is
+  NOT included.

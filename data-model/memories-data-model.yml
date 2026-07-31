@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/memories-platform-openapi.json
+note: >-
+  Entity graph derived from OpenAPI request/response schemas and id-reference
+  fields. Video IDs use the VI-prefix (e.g. VI1234567890).
+entities:
+- name: Video
+  id_prefix: VI
+  id_field: video_no
+  description: An uploaded/indexed video in a private or public library.
+  key_fields: [video_no, task_id, folder_id, status]
+- name: Folder
+  id_field: folder_id
+  description: Organizational container for videos in the private library.
+- name: Image
+  description: An uploaded image in the private image library, searchable by text/image.
+- name: Memory
+  description: A memory entry added and searchable via the memories endpoints.
+- name: Task
+  id_field: task_id
+  description: An async job (upload/scrape/edit/transcribe) tracked by task id.
+- name: Transcript
+  description: Speech-to-text transcription bound to a video's audio track.
+- name: Caption
+  description: Scene-by-scene visual caption auto-generated for a video.
+relationships:
+- from: Video
+  to: Folder
+  type: belongs_to
+  via: folder_id
+- from: Folder
+  to: Video
+  type: has_many
+  via: folder_id
+- from: Video
+  to: Transcript
+  type: has_one
+  via: video_no
+- from: Video
+  to: Caption
+  type: has_one
+  via: video_no
+- from: Task
+  to: Video
+  type: has_many
+  via: task_id
+- from: Video
+  to: Task
+  type: belongs_to
+  via: task_id

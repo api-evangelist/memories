@@ -1,0 +1,127 @@
+# Memories.ai API Tools
+
+## Docs
+
+- [Memories.ai Documentation](https://api-tools.memories.ai/home/overview.md): Pick the right product: Visual Intelligence for stateless inference, Visual Search for an indexed video + image library, Visual Agents for ready-made workflows.
+- [Overview](https://api-tools.memories.ai/visual-agents/overview.md): Open-source agents and managed workflow APIs for video search, video editing, and screenplay extraction.
+- [Cancel Task](https://api-tools.memories.ai/visual-agents/screenplay/cancel-task.md): Cancel a running screenplay extraction task
+- [Download Task Result](https://api-tools.memories.ai/visual-agents/screenplay/download-task-result.md): Download completed screenplay extraction results as a zip file
+- [Get Task Status](https://api-tools.memories.ai/visual-agents/screenplay/get-task-status.md): Query the current status and progress of a screenplay extraction task
+- [Submit Screenplay Task](https://api-tools.memories.ai/visual-agents/screenplay/submit-task.md): Submit an async screenplay extraction task for short drama videos
+- [Agent Examples](https://api-tools.memories.ai/visual-agents/use-cases.md): Self-contained Jupyter notebooks demonstrating eight ReAct agents on the Memories.ai API — SOP compliance, service quality, security, public-platform search, video editing, personal memory, visual RAG, and creator intelligence.
+- [Scene Detection](https://api-tools.memories.ai/visual-agents/video-clip.md): Detect scene boundaries in a video asset
+- [Edit Video](https://api-tools.memories.ai/visual-agents/video-edit.md): Edit and compose videos with AI-powered instructions
+- [Video Editing Agent (VEA)](https://api-tools.memories.ai/visual-agents/video-editing-agent.md): An automated pipeline for converting long-form videos into short-form edits.
+- [Video Searching Agent](https://api-tools.memories.ai/visual-agents/video-searching-agent.md): Official OpenClaw skill on ClawHub powered by the managed Memories.ai Video Searching API.
+- [Video Searching API](https://api-tools.memories.ai/visual-agents/video-searching-api.md): Managed token-authenticated endpoint for agentic video search via SSE.
+- [Split Video](https://api-tools.memories.ai/visual-agents/video-split.md): Split a video into multiple segments
+- [Delete Asset](https://api-tools.memories.ai/visual-intelligence/base/delete.md): Delete an asset by its ID
+- [Download Asset](https://api-tools.memories.ai/visual-intelligence/base/download.md): Download an asset file by its ID.
+- [Download by Bucket and Blob](https://api-tools.memories.ai/visual-intelligence/base/download-by-bucket-blob.md): Download an asset (or any GCS-stored resource) by bucket and blob path instead of by asset ID.
+- [Extract Video Frames](https://api-tools.memories.ai/visual-intelligence/base/extract-frames.md): Extract individual frames from a video asset
+- [Get Asset Metadata](https://api-tools.memories.ai/visual-intelligence/base/get-metadata.md): Retrieve metadata information for a specific asset
+- [Upload File](https://api-tools.memories.ai/visual-intelligence/base/upload.md): Upload a video, audio, or image file to Visual Intelligence for processing and analysis.
+- [Get Upload Signed URL](https://api-tools.memories.ai/visual-intelligence/base/upload-by-signed-url/get-upload-signed-url.md): Generate a pre-signed URL for direct file upload
+- [Upload File Using Signed URL](https://api-tools.memories.ai/visual-intelligence/base/upload-by-signed-url/upload-file-using-signed-url.md): Upload file directly to storage using pre-signed URL
+- [Image Caption](https://api-tools.memories.ai/visual-intelligence/caption/image-caption.md): Analyze one or more images and generate captions or descriptions — from a URL, local file, or base64.
+- [Video Caption](https://api-tools.memories.ai/visual-intelligence/caption/video-caption.md): Generate captions, summaries, and analysis for videos — with optional Human Re-ID to identify specific people.
+- [Video Frame Description](https://api-tools.memories.ai/visual-intelligence/caption/video-frame-description.md): Generate timestamped visual descriptions of what appears on screen in a video.
+- [Video Summary](https://api-tools.memories.ai/visual-intelligence/caption/video-summary.md): Generate an AI summary of a video's content asynchronously.
+- [Generate Image Embedding](https://api-tools.memories.ai/visual-intelligence/embeddings/image-embedding.md): Generate vector embeddings for images using multimodal models
+- [Generate Text Embedding](https://api-tools.memories.ai/visual-intelligence/embeddings/text-embedding.md): Generate vector embeddings for text using language models
+- [Generate Video Embedding](https://api-tools.memories.ai/visual-intelligence/embeddings/video-embedding.md): Generate vector embeddings for videos using multimodal models
+- [Gemini Image](https://api-tools.memories.ai/visual-intelligence/gemini/gemini-ilm.md): Generate chat completions using Gemini ILM model with image inputs.
+- [Gemini Video](https://api-tools.memories.ai/visual-intelligence/gemini/gemini-vlm.md): Generate chat completions using Gemini VLM model with text, video, and image inputs.
+- [Create Your API Key](https://api-tools.memories.ai/visual-intelligence/getting-started/create-your-key.md): Get started with Memories.ai API by creating your first API key
+- [Response & Error Codes](https://api-tools.memories.ai/visual-intelligence/getting-started/error-codes.md): Understand the standard API response structure and error codes
+- [Introduction](https://api-tools.memories.ai/visual-intelligence/getting-started/introduction.md): Visual Intelligence — stateless REST APIs for video scraping, transcription, video/image understanding, embeddings, and live-stream processing.
+- [API Overview](https://api-tools.memories.ai/visual-intelligence/getting-started/overview.md): Visual Intelligence endpoint groups at a glance — pick the right one for your use case.
+- [Rate Limit](https://api-tools.memories.ai/visual-intelligence/getting-started/rate-limit.md): Understand the rate limits for Memories.ai API endpoints
+- [Webhooks](https://api-tools.memories.ai/visual-intelligence/getting-started/webhooks.md): Configure webhook endpoints to receive async task results
+- [GPT Image](https://api-tools.memories.ai/visual-intelligence/gpt/gpt-ilm.md): Generate chat completions using GPT ILM model with image inputs.
+- [Image Model Selection](https://api-tools.memories.ai/visual-intelligence/image-model-selection.md): Choose the right image understanding model for your workload
+- [Nova Image](https://api-tools.memories.ai/visual-intelligence/nova/nova-ilm.md): Generate chat completions using Nova ILM model with image and text inputs.
+- [Nova Video](https://api-tools.memories.ai/visual-intelligence/nova/nova-vlm.md): Generate chat completions using Nova VLM model with text, video, and image inputs.
+- [Qwen Image](https://api-tools.memories.ai/visual-intelligence/qwen/qwen-ilm.md): Generate chat completions using Qwen ILM model with image inputs.
+- [Qwen Video](https://api-tools.memories.ai/visual-intelligence/qwen/qwen-vlm.md): Generate chat completions using Qwen VLM model with text, video, and image inputs.
+- [TikTok Video Comment](https://api-tools.memories.ai/visual-intelligence/scraper/tiktok-video-comment.md): Get the comment list for TikTok videos.
+- [TikTok Video Comment Reply](https://api-tools.memories.ai/visual-intelligence/scraper/tiktok-video-comment-reply.md): Get the reply list for TikTok video comments.
+- [TikTok Video Detail](https://api-tools.memories.ai/visual-intelligence/scraper/tiktok-video-detail.md): Get detailed information for TikTok videos.
+- [YouTube Video Comment](https://api-tools.memories.ai/visual-intelligence/scraper/youtube-video-comment.md): Get the comment list for YouTube videos.
+- [YouTube Video Comment Reply](https://api-tools.memories.ai/visual-intelligence/scraper/youtube-video-comment-reply.md): Get the reply list for YouTube video comments.
+- [YouTube Video Detail](https://api-tools.memories.ai/visual-intelligence/scraper/youtube-video-detail.md): Get detailed information for YouTube videos.
+- [Social Media Scraping Overview](https://api-tools.memories.ai/visual-intelligence/social-media-scraping-overview.md): How channel routing works across social media scraping endpoints, including Apify, RapidAPI, and managed routing by Memories.ai.
+- [Start Audio Stream Transcription](https://api-tools.memories.ai/visual-intelligence/stream/audio-stream-start.md): Start real-time audio stream transcription with ElevenLabs or AssemblyAI, controlled by a provider parameter.
+- [Stop Audio Stream Transcription](https://api-tools.memories.ai/visual-intelligence/stream/audio-stream-stop.md): Stop an active audio stream transcription task.
+- [Real-time Audio Stream (WebSocket)](https://api-tools.memories.ai/visual-intelligence/stream/audio-stream-websocket.md): Connect directly via WebSocket for real-time speech-to-text with ElevenLabs or AssemblyAI.
+- [Start Video Stream Moderation](https://api-tools.memories.ai/visual-intelligence/stream/video-stream-start.md): Start video stream content moderation and logo detection with real-time processing.
+- [Stop Video Stream Moderation](https://api-tools.memories.ai/visual-intelligence/stream/video-stream-stop.md): Stop an active video stream processing task.
+- [Start Stream Video Understanding](https://api-tools.memories.ai/visual-intelligence/stream/video-stream-understanding-start.md): Start a real-time AI analysis session on a live RTMP video stream with a custom prompt.
+- [Stop Stream Video Understanding](https://api-tools.memories.ai/visual-intelligence/stream/video-stream-understanding-stop.md): Stop an active live-stream understanding task.
+- [AssemblyAI](https://api-tools.memories.ai/visual-intelligence/transcript/assemblyai.md): Transcribe audio to text using AssemblyAI Universal-2 model.
+- [ElevenLabs](https://api-tools.memories.ai/visual-intelligence/transcript/elevenlabs.md): Transcribe audio to text using ElevenLabs Scribe V2 model.
+- [Speaker Diarization](https://api-tools.memories.ai/visual-intelligence/transcript/speaker-diarization.md): Identify who spoke and when — returns anonymous speaker labels with timestamps.
+- [Multimodal Speaker Recognition](https://api-tools.memories.ai/visual-intelligence/transcript/speaker-recognition.md): Identify named speakers by combining voice diarization with face recognition.
+- [Whisper Audio Transcription](https://api-tools.memories.ai/visual-intelligence/transcript/whisper-audio-transcription.md): Transcribe audio or video files using OpenAI Whisper, with optional speaker labeling.
+- [Instagram Video Caption](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/instagram-video-caption.md): Get Instagram video caption.
+- [Instagram Video Metadata](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/instagram-video-metadata.md): Get Instagram video metadata.
+- [Instagram Video Transcript](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/instagram-video-transcript.md): Get Instagram video transcript.
+- [TikTok Video Caption](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/tiktok-video-caption.md): Get TikTok video caption.
+- [TikTok Video Metadata](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/tiktok-video-metadata.md): Get TikTok video metadata.
+- [TikTok Video Transcript](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/tiktok-video-transcript.md): Get TikTok video transcript.
+- [Twitter Video Caption](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/twitter-video-caption.md): Get Twitter video caption.
+- [Twitter Video Metadata](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/twitter-video-metadata.md): Get Twitter video metadata.
+- [Twitter Video Transcript](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/twitter-video-transcript.md): Get Twitter video transcript.
+- [YouTube Video Caption](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/youtube-video-caption.md): Get YouTube video caption.
+- [YouTube Video Metadata](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/youtube-video-metadata.md): Get YouTube video metadata.
+- [YouTube Video Transcript](https://api-tools.memories.ai/visual-intelligence/video-metadata-transcript/youtube-video-transcript.md): Get YouTube video transcript.
+- [Video Model Selection](https://api-tools.memories.ai/visual-intelligence/video-model-selection.md): Choose the right video understanding model for your workload
+- [API Overview](https://api-tools.memories.ai/visual-search/api-overview.md): Key concepts for working with the Visual Search API — authentication, indexing, and status.
+- [Get Audio Transcription](https://api-tools.memories.ai/visual-search/audio-transcription.md): Retrieve the speech-to-text transcription of a video's audio track in your Private Video Library.
+- [Create Folder](https://api-tools.memories.ai/visual-search/create-folder.md): Create a new folder to organize videos in your Private Video Library.
+- [Create Your API Key](https://api-tools.memories.ai/visual-search/create-your-key.md): Get started with Memories.ai Visual Search by creating your first API key.
+- [Delete Folder](https://api-tools.memories.ai/visual-search/delete-folder.md): Delete a folder from your Private Video Library.
+- [Delete Videos](https://api-tools.memories.ai/visual-search/delete-video.md): Permanently delete one or more videos from your Private Video Library.
+- [Download by Bucket and Blob](https://api-tools.memories.ai/visual-search/download-by-bucket-blob.md): Download a stored video/keyframe/image directly by its GCS bucket and blob path, returned by other Visual Search endpoints.
+- [Download Video](https://api-tools.memories.ai/visual-search/download-video.md): Download the original video file for a given video in your Private Video Library.
+- [Error Codes](https://api-tools.memories.ai/visual-search/error-codes.md): Reference for API error codes and troubleshooting.
+- [Get Video Metadata](https://api-tools.memories.ai/visual-search/get-metadata.md): Fetch the full metadata record for a single video in your Private Video Library.
+- [Get Task Status](https://api-tools.memories.ai/visual-search/get-task-status.md): Track a batch upload task and retrieve the video IDs it produced.
+- [Introduction](https://api-tools.memories.ai/visual-search/introduction.md): Visual Search — upload videos and images, index them automatically, and search them at scale.
+- [List Videos in Folder](https://api-tools.memories.ai/visual-search/list-folder-videos.md): List the videos contained in a specific folder, with pagination.
+- [List Folders](https://api-tools.memories.ai/visual-search/list-folders.md): List all folders in your account, used to organize your Private Video Library.
+- [List Videos](https://api-tools.memories.ai/visual-search/list-videos.md): Browse and filter your Private Video Library with pagination, status, and capture metadata filters.
+- [Move Videos to Folder](https://api-tools.memories.ai/visual-search/move-videos-to-folder.md): Move one or more videos into a target folder.
+- [Pricing](https://api-tools.memories.ai/visual-search/pricing.md): Visual Search pricing tiers, credit model, and free trial policy.
+- [Rate Limits](https://api-tools.memories.ai/visual-search/rate-limits.md): API rate limits and usage guidelines.
+- [Rename Folder](https://api-tools.memories.ai/visual-search/rename-folder.md): Rename an existing folder in your Private Video Library.
+- [Search by Image](https://api-tools.memories.ai/visual-search/search-by-image.md): Find visually similar frames across all videos in your Private Video Library using a query image.
+- [Search by Image — Within a Video](https://api-tools.memories.ai/visual-search/search-by-image-in-video.md): Find matching time ranges inside one specific video using a query image and a natural-language prompt.
+- [Search by Text](https://api-tools.memories.ai/visual-search/search-by-text.md): Semantic search across your Private Video Library with a natural-language query.
+- [Search by Transcript](https://api-tools.memories.ai/visual-search/search-by-transcript.md): Exact keyword search across stored audio transcripts in your Private Video Library.
+- [Overview](https://api-tools.memories.ai/visual-search/search-overview.md): Search your private video library, private image library, or public video library.
+- [Search by Text](https://api-tools.memories.ai/visual-search/search-private-image.md): Search images you have uploaded to the Private Image Library using a natural-language text query.
+- [Search Public — by Image](https://api-tools.memories.ai/visual-search/search-public-by-image.md): Find visually similar frames across the public TikTok / YouTube / Instagram video library using a query image.
+- [Search Public — by Text](https://api-tools.memories.ai/visual-search/search-public-by-text.md): Semantic text search across the public TikTok / YouTube / Instagram video library.
+- [Search Public — by Transcript](https://api-tools.memories.ai/visual-search/search-public-by-transcript.md): Exact keyword search across the public TikTok / YouTube / Instagram audio transcripts.
+- [Import from Creator Profile — Private](https://api-tools.memories.ai/visual-search/upload-from-creator-profile.md): Scrape the most recent N videos from a creator profile into your Private Video Library.
+- [Import from Creator Profile — Public](https://api-tools.memories.ai/visual-search/upload-from-creator-profile-public.md): Scrape the most recent N videos from a creator profile into the shared Public Video Library.
+- [Import from Hashtag — Private](https://api-tools.memories.ai/visual-search/upload-from-hashtag.md): Discover and ingest recent posts tagged with one or more hashtags into your Private Video Library.
+- [Import from Hashtag — Public](https://api-tools.memories.ai/visual-search/upload-from-hashtag-public.md): Discover and ingest recent posts tagged with one or more hashtags into the shared Public Video Library.
+- [Import from Post URLs — Private](https://api-tools.memories.ai/visual-search/upload-from-post-urls.md): Import specific TikTok, YouTube, or Instagram post URLs into your Private Video Library.
+- [Import from Post URLs — Public](https://api-tools.memories.ai/visual-search/upload-from-post-urls-public.md): Import specific TikTok, YouTube, or Instagram post URLs into the shared Public Video Library.
+- [Upload Image](https://api-tools.memories.ai/visual-search/upload-image-from-file.md): Upload one or more images to your Private Image Library for indexing and search.
+- [Overview](https://api-tools.memories.ai/visual-search/upload-overview.md): Upload videos or images to Memories.ai — indexing happens automatically.
+- [Upload Video — from File](https://api-tools.memories.ai/visual-search/upload-video-from-file.md): Upload a local video file to your Private Video Library for indexing and search.
+- [Upload Video — from URL](https://api-tools.memories.ai/visual-search/upload-video-from-url.md): Upload a video by direct URL — the server fetches the file at request time and queues it for indexing.
+- [Get Video Caption](https://api-tools.memories.ai/visual-search/video-caption.md): Retrieve the visual (scene-by-scene) caption auto-generated for a video in your Private Video Library.
+
+## OpenAPI Specs
+
+- [openapi](https://api-tools.memories.ai/visual-search/openapi.json)
+- [understanding-openapi](https://api-tools.memories.ai/visual-intelligence/stream/understanding-openapi.json)
+
+## Optional
+
+- [Memories.ai Console](https://api-platform.memories.ai/stripe)
+- [Memories CLI (GitHub)](https://github.com/Memories-ai-labs/memories-cli)

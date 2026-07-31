@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/memories-platform-openapi.json, openapi/memories-stream-understanding-openapi.json
+docs: https://api-tools.memories.ai/visual-intelligence/getting-started/create-your-key
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  key_prefix: sk-mavi-
+  notes: >-
+    All Memories.ai products (Visual Intelligence, Visual Search, Visual Agents,
+    Stream Understanding) authenticate with a single account-scoped API key passed
+    in the Authorization request header. Keys use the sk-mavi- prefix and are
+    created in the API Platform console (Payment -> API Key Management). One key
+    is shown once at creation. All keys on an account share the same rate-limit
+    and credit quota. No OAuth or scope surface is exposed.
+  console: https://api-platform.memories.ai/
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  key_prefix: sk-mavi-
+  sources:
+  - openapi/memories-platform-openapi.json
+  - openapi/memories-stream-understanding-openapi.json

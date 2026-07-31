@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Stream Video Understanding API",
+    "version": "1.0.0",
+    "description": "Real-time AI analysis on live RTMP video streams using custom prompts."
+  },
+  "servers": [
+    {
+      "url": "https://stream.memories.ai",
+      "description": "Stream Understanding service"
+    }
+  ],
+  "paths": {
+    "/v1/understand/streamConnect": {
+      "post": {
+        "summary": "Start Stream Video Understanding",
+        "description": "Start a real-time AI analysis session on a live RTMP video stream.",
+        "operationId": "startStreamUnderstanding",
+        "tags": [
+          "Stream Understanding"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "url",
+                  "user_prompt",
+                  "system_prompt",
+                  "callback"
+                ],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "RTMP stream URL for live video input",
+                    "example": "rtmp://your.server:1935/live/stream"
+                  },
+                  "user_prompt": {
+                    "type": "string",
+                    "description": "Analysis instruction applied to each frame window",
+                    "example": "What is happening right now?"
+                  },
+                  "system_prompt": {
+                    "type": "string",
+                    "description": "Role or context for the AI",
+                    "example": "You are a real-time video monitoring system."
+                  },
+                  "callback": {
+                    "type": "string",
+                    "description": "Public URL to receive continuous analysis results",
+                    "example": "https://your.app/callback"
+                  },
+                  "thinking": {
+                    "type": "boolean",
+                    "description": "Enable reasoning mode for deeper analysis",
+                    "default": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Stream started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "task_id": {
+                      "type": "string",
+                      "example": "5347085a-1747-4731-bdde-3856d09502c4"
+                    },
+                    "text": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/understand/stop/{task_id}": {
+      "post": {
+        "summary": "Stop Stream Video Understanding",
+        "description": "Stop an active live-stream understanding task.",
+        "operationId": "stopStreamUnderstanding",
+        "tags": [
+          "Stream Understanding"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The task ID returned when starting the stream",
+            "example": "5347085a-1747-4731-bdde-3856d09502c4"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Stream stopped successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 14
+                    },
+                    "task_id": {
+                      "type": "string",
+                      "example": "5347085a-1747-4731-bdde-3856d09502c4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    }
+  }
+}

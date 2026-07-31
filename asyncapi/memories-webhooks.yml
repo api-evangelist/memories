@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tools.memories.ai/visual-intelligence/getting-started/webhooks
+spec_type: Webhooks
+registration:
+  where: MAVI Console -> Webhooks Settings
+  requirements: >-
+    A single publicly accessible HTTPS endpoint that accepts POST requests with a
+    JSON body and returns a 2xx status on success. Registered once; applies to all
+    async operations.
+callback_payload:
+  transport: HTTP POST (JSON)
+  fields:
+  - name: code
+    description: Integer status indicator (200 = success).
+  - name: message
+    description: Text status description.
+  - name: data
+    description: Endpoint-specific result payload.
+  - name: task_id
+    description: Identifier matching the originating request (use to correlate callbacks).
+  signature: none-documented
+triggering_operations:
+  note: >-
+    Nine async endpoints respond immediately with a task_id and deliver results
+    via webhook callback.
+  events:
+  - frame-extraction
+  - scene-detection
+  - video-segmentation
+  - ai-video-editing
+  - audio-transcription
+  - video-description
+  - speaker-diarization
+  - multimodal-speaker-recognition
+  - video-summary

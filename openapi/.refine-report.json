@@ -1,0 +1,18 @@
+{
+  "provider": "memories",
+  "sources": [
+    "memories-serve-api-openapi.yml",
+    "memories-stream-understanding-api-openapi.yml",
+    "memories-understand-api-openapi.yml"
+  ],
+  "outputs": [
+    "memories-serve-api-openapi.yml",
+    "memories-stream-understanding-api-openapi.yml",
+    "memories-understand-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

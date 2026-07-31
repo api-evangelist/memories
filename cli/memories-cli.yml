@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/Memories-ai-labs/memories-cli
+name: memories
+package: memories-cli
+version: 0.1.3
+description: JSON-first Python CLI for the memories.ai v1, v2, and raw HTTP workflows.
+install:
+- lane: source
+  command: python3 -m pip install -e ".[dev]"
+- lane: curl
+  command: curl -fsSL https://raw.githubusercontent.com/Memories-ai-labs/memories-cli/main/install.sh | sh
+- lane: github-releases
+  command: Download memories-v<version>-{darwin-arm64,linux-x64}.tar.gz, verify sha256sums.txt, unpack.
+config:
+  env:
+  - name: MEMORIES_API_KEY
+    required: true
+  - name: MEMORIES_V1_BASE_URL
+    default: https://api.memories.ai
+  - name: MEMORIES_V2_BASE_URL
+    default: https://mavi-backend.memories.ai/serve/api/v2
+  - name: MEMORIES_TIMEOUT_MS
+    default: '30000'
+  config_file: ~/.openclaw/memories/config.json
+command_groups:
+- group: v1
+  label: Visual Search (https://api.memories.ai/serve/api/v1)
+  commands:
+  - upload-file
+  - upload-url
+  - upload-image
+  - upload-platform-url
+  - upload-creator
+  - upload-hashtag
+  - upload-platform-url-public
+  - upload-creator-public
+  - upload-hashtag-public
+  - list-videos
+  - list-unique-ids
+  - get-metadata
+  - videos-by-task-id
+  - video-transcription
+  - audio-transcription
+  - video-caption
+  - search
+  - search-similar-images
+  - search-clips-by-image
+  - search-audio-transcripts
+  - search-public
+  - search-public-similar-images
+  - search-public-audio-transcripts
+  - download
+  - download-by-bucket-blob
+  - delete-videos
+- group: v2
+  label: Visual Intelligence (https://mavi-backend.memories.ai/serve/api/v2)
+- group: raw
+  label: Raw authenticated HTTP requests against either base URL.
+  commands:
+  - request

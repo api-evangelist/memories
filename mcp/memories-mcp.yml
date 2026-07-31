@@ -1,0 +1,70 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/memories-platform-openapi.json, openapi/memories-stream-understanding-openapi.json
+note: >-
+  No official hosted/remote MCP server was found for Memories.ai (the provider
+  ships an Agent Skill / OpenClaw skill and a CLI instead). The tool list below
+  is a candidate derived one-to-one from OpenAPI operations, to seed an MCP
+  server. Bearer sk-mavi- API key in the Authorization header.
+server:
+  name: memories
+  transport: http
+tools:
+- name: add_memory
+  description: Add a memory entry.
+  source_operation: openapi/memories-platform-openapi.json#add_memory
+- name: list_memories
+  description: List memory entries.
+  source_operation: openapi/memories-platform-openapi.json#list_memories
+- name: search_memories
+  description: Search memories.
+  source_operation: openapi/memories-platform-openapi.json#search_memories
+- name: upload_video_from_file
+  description: Upload a local video file to the private library for indexing.
+  source_operation: openapi/memories-platform-openapi.json#upload_video_from_file
+- name: upload_video_from_url
+  description: Upload a video by URL for indexing.
+  source_operation: openapi/memories-platform-openapi.json#upload_video_from_url
+- name: upload_image_from_file
+  description: Upload images to the private image library.
+  source_operation: openapi/memories-platform-openapi.json#upload_image_from_file
+- name: search_private_library
+  description: Semantic text search across the private video library.
+  source_operation: openapi/memories-platform-openapi.json#search_private_library
+- name: search_public_library
+  description: Semantic text search across the public video library.
+  source_operation: openapi/memories-platform-openapi.json#search_public_library
+- name: search_clips_by_image
+  description: Find matching clips within a video using a query image.
+  source_operation: openapi/memories-platform-openapi.json#search_clips_by_image
+- name: search_audio_transcripts
+  description: Keyword search across stored audio transcripts.
+  source_operation: openapi/memories-platform-openapi.json#search_audio_transcripts
+- name: get_video_metadata
+  description: Fetch metadata for a single video.
+  source_operation: openapi/memories-platform-openapi.json#get_video_metadata
+- name: list_videos
+  description: Browse and filter the private video library.
+  source_operation: openapi/memories-platform-openapi.json#list_videos
+- name: get_video_caption
+  description: Retrieve the auto-generated visual caption for a video.
+  source_operation: openapi/memories-platform-openapi.json#get_video_caption
+- name: get_audio_transcription
+  description: Retrieve the speech-to-text transcription of a video.
+  source_operation: openapi/memories-platform-openapi.json#get_audio_transcription
+- name: video_chat
+  description: Chat over a video's understood content.
+  source_operation: openapi/memories-platform-openapi.json#video_chat
+- name: get_task_status
+  description: Query the status of an async task.
+  source_operation: openapi/memories-platform-openapi.json#get_task_status
+- name: delete_videos
+  description: Delete videos from the private library.
+  source_operation: openapi/memories-platform-openapi.json#delete_videos
+- name: startStreamUnderstanding
+  description: Start real-time AI analysis on a live RTMP stream.
+  source_operation: openapi/memories-stream-understanding-openapi.json#startStreamUnderstanding
+- name: stopStreamUnderstanding
+  description: Stop an active live-stream understanding task.
+  source_operation: openapi/memories-stream-understanding-openapi.json#stopStreamUnderstanding

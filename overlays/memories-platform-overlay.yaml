@@ -1,0 +1,28 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Memories.ai Platform API
+  version: 1.0.0
+extends: openapi/memories-platform-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: memories
+    x-apievangelist-products:
+    - Visual Intelligence
+    - Visual Search
+    - Visual Agents
+    x-apievangelist-base-urls:
+      visual_search_v1: https://api.memories.ai/serve/api/v1
+      visual_intelligence_v2: https://mavi-backend.memories.ai/serve/api/v2
+      stream_understanding: https://stream.memories.ai
+    x-apievangelist-error-envelope: '{code, msg, data, success, failed}'
+    x-apievangelist-rate-limit: 1 QPS standard (per account)
+    x-apievangelist-webhooks: asyncapi/memories-webhooks.yml
+    x-apievangelist-compliance:
+    - SOC 2 Type 2
+    - HIPAA
+    - GDPR
+- target: $.components.securitySchemes.ApiKeyAuth
+  update:
+    x-key-prefix: sk-mavi-
+    description: Account-scoped API key in the Authorization header (sk-mavi- prefix).

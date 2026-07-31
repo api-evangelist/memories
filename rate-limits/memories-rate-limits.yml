@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tools.memories.ai/visual-intelligence/getting-started/rate-limit
+scope: per-account
+notes: >-
+  Rate limits apply per account; all API keys on an account share the same
+  quota. Video-understanding model calls (Gemini, Nova, Qwen) follow the
+  underlying provider limits rather than Memories.ai QPS. Enterprise customers
+  can request higher custom limits.
+limits:
+- name: Standard APIs (upload, transcription, embeddings)
+  limit_count: 1
+  unit: QPS
+- name: Scraping / task APIs (YouTube metadata via Rapid)
+  limit_count: 12
+  unit: QPH
+- name: Scraping / task APIs (Apify channels)
+  limit_count: 10
+  unit: QPS
+- name: Stream processing
+  limit_count: null
+  unit: concurrent streams
+  note: Uses a max concurrent-stream limit (video + audio combined), not QPS.
+retry:
+  strategy: exponential-backoff
+  initial_delay_seconds: 1
+  max_delay_seconds: 32
+  note: Doubling each retry. Repeated violations may temporarily suspend the API key.
+response_429:
+  envelope: '{"code":429,"msg":"Rate limit exceeded","data":null}'

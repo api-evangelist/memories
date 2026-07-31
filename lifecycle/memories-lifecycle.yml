@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tools.memories.ai/
+versioning:
+  scheme: uri-path
+  current: v2
+  versions: [v1, v2]
+  docs: https://api-tools.memories.ai/visual-intelligence/getting-started/overview
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  note: No public SLA/uptime target found outside of enterprise sales agreements.
+status_page: null
+status_page_note: >-
+  No public status page found (status.memories.ai does not resolve as of this pass).
+deprecated_operations: []
