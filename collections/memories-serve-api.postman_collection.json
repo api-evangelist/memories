@@ -1,0 +1,3564 @@
+{
+  "item": [
+    {
+      "id": "0ee07e01-386f-4c57-ae48-19521ec08a36",
+      "name": "Serve",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "488624f9-94ab-4c62-b072-cc8ad4e99376",
+          "name": "Add Memory",
+          "request": {
+            "name": "Add Memory",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "memories",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"memories\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"latitude\": \"<string>\",\n  \"longitude\": \"<string>\",\n  \"memories_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b938bf6d-2095-47fb-86cb-5db2e8ca506b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "memories",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memories\": [\n    {\n      \"role\": \"Tester\",\n      \"content\": \"Starting testing today\"\n    },\n    {\n      \"role\": \"Tester\",\n      \"content\": \"Starting testing today\"\n    }\n  ],\n  \"tags\": [\n    \"test-tag\"\n  ],\n  \"latitude\": \"3.2028\",\n  \"longitude\": \"73.2207\",\n  \"memories_at\": \"2025-11-17T17:00:00Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3b07a83-69bc-40e4-a1cc-95cf3dac9bdf",
+          "name": "Get Audio Transcription",
+          "request": {
+            "name": "Get Audio Transcription",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "get_audio_transcription"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "video_no",
+                  "value": "<string>",
+                  "description": "(Required) The unique video ID returned by the upload API."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f1a80b2-dec7-4800-9e3e-f74b801d83e1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "get_audio_transcription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_no",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "482b1283-d40e-46fb-a23c-56b3b44d8101",
+          "name": "Delete Videos",
+          "request": {
+            "name": "Delete Videos",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "delete_videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83b74eec-6913-407f-a81d-189f8169ae01",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "delete_videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"VI1234567890\",\n  \"VI0987654321\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29582ab5-c3be-41e1-8243-c1d210fda48e",
+          "name": "Download Video",
+          "request": {
+            "name": "Download Video",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"video_no\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b459f02b-f69f-40b0-a44f-c4d57960b93d",
+              "name": "Binary video stream or JSON error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"video_no\": \"VI625239098370850816\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81d71e2f-ab0e-4c76-9ded-c11ced437f26",
+          "name": "Get Task Status",
+          "request": {
+            "name": "Get Task Status",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "get_video_ids_by_task_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "task_id",
+                  "value": "<string>",
+                  "description": "(Required) The task ID returned by an upload or scraping request."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d128a253-810b-4ec4-8287-f707b504dc92",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "get_video_ids_by_task_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "task_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85c1d70a-9e9f-4bd0-85d7-1f2f619e2da7",
+          "name": "List Memories",
+          "request": {
+            "name": "List Memories",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "memories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filters\": {\n    \"key_0\": 6792,\n    \"key_1\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "be9a5a76-458d-48fa-bc8a-7c91cda602e6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "memories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filters\": {\n    \"key_0\": 8540\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7eeefade-a83a-448a-a239-e727afd91c19",
+          "name": "Get Video Metadata",
+          "request": {
+            "name": "Get Video Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "get_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "video_no",
+                  "value": "<string>",
+                  "description": "(Required) Video identifier. Must be non-empty."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7514e6e-dd14-4360-8b33-512f4589136c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "get_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_no",
+                      "value": "VI606404158946574336"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"video_no\": \"VI606404158946574336\",\n    \"video_name\": \"182082-867762198_tiny\",\n    \"duration\": 12,\n    \"size\": 3284512,\n    \"create_time\": 1754037217992,\n    \"status\": \"PARSE\",\n    \"cause\": \"string\",\n    \"resolution_label\": \"720P\",\n    \"fps\": 30,\n    \"width\": 1280,\n    \"height\": 720,\n    \"datetime_taken\": 1729388400000,\n    \"camera_model\": \"Canon EOS 5D\",\n    \"latitude\": 39.9042,\n    \"longitude\": 116.4074,\n    \"tags\": [\n      \"holiday\",\n      \"beijing\",\n      \"api\"\n    ],\n    \"bucket\": \"string\",\n    \"blob\": \"string\"\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18f83082-f95b-400f-8003-d626cc5db732",
+          "name": "List Videos",
+          "request": {
+            "name": "List Videos",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "list_videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"size\": 200,\n  \"video_name\": \"<string>\",\n  \"video_no\": \"<string>\",\n  \"video_nos\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\",\n  \"camera_model\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"datetime_taken\": \"<long>\",\n  \"latitude\": \"<double>\",\n  \"longitude\": \"<double>\",\n  \"folder_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "42543be0-f7eb-43b2-b967-3a0fda6920e4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "list_videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"page\": 1,\n  \"size\": 200,\n  \"video_name\": \"<string>\",\n  \"video_no\": \"<string>\",\n  \"video_nos\": [\n    \"VI606404158946574336\",\n    \"VI606402870447996928\"\n  ],\n  \"status\": \"<string>\",\n  \"camera_model\": \"Canon EOS 5D\",\n  \"tag\": \"holiday\",\n  \"datetime_taken\": 1729388400000,\n  \"latitude\": 39.9042,\n  \"longitude\": 116.4074,\n  \"folder_id\": 671631448308117500\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"current_page\": 1,\n    \"page_size\": 20,\n    \"total_count\": 2,\n    \"videos\": [\n      {\n        \"video_no\": \"VI606404158946574336\",\n        \"video_name\": \"182082-867762198_tiny\",\n        \"duration\": 12,\n        \"size\": 3284512,\n        \"create_time\": 1754037217992,\n        \"status\": \"PARSE\",\n        \"cause\": \"string\",\n        \"video_url\": \"string\",\n        \"datetime_taken\": 1729388400000,\n        \"camera_model\": \"Canon EOS 5D\",\n        \"latitude\": 39.9042,\n        \"longitude\": 116.4074,\n        \"tags\": [\n          \"holiday\",\n          \"beijing\",\n          \"api\"\n        ],\n        \"bucket\": \"string\",\n        \"blob\": \"string\"\n      },\n      {\n        \"video_no\": \"VI606404158946574336\",\n        \"video_name\": \"182082-867762198_tiny\",\n        \"duration\": 12,\n        \"size\": 3284512,\n        \"create_time\": 1754037217992,\n        \"status\": \"PARSE\",\n        \"cause\": \"string\",\n        \"video_url\": \"string\",\n        \"datetime_taken\": 1729388400000,\n        \"camera_model\": \"Canon EOS 5D\",\n        \"latitude\": 39.9042,\n        \"longitude\": 116.4074,\n        \"tags\": [\n          \"holiday\",\n          \"beijing\",\n          \"api\"\n        ],\n        \"bucket\": \"string\",\n        \"blob\": \"string\"\n      }\n    ]\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "645ec3a3-e3e5-44e9-a641-11c98278b193",
+          "name": "Chat with Personal Media Entities",
+          "request": {
+            "name": "Chat with Personal Media Entities",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "chat_personal_stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/event-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"session_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "90b59be0-bc81-4e4b-a25e-3fcdb26eb89c",
+              "name": "Streaming SSE response or JSON response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "chat_personal_stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/event-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"When did I went to the beach?\",\n  \"session_id\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66826ce9-f6d4-4e9e-9d06-980dca00d328",
+          "name": "Search Clips by Image",
+          "request": {
+            "name": "Search Clips by Image",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "search_clips_by_image"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB."
+                },
+                {
+                  "key": "video_no",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Unique identifier of the video to search within. Must be non-empty."
+                },
+                {
+                  "key": "prompt",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Natural-language prompt that refines the visual match. Must be non-empty. English recommended."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1bf6f668-c3a0-4766-96d1-4205433e1185",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "search_clips_by_image"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Unique identifier of the video to search within. Must be non-empty.",
+                        "type": "text/plain"
+                      },
+                      "key": "video_no",
+                      "value": "VI625239098370850816",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Natural-language prompt that refines the visual match. Must be non-empty. English recommended.",
+                        "type": "text/plain"
+                      },
+                      "key": "prompt",
+                      "value": "focus on the red shirt, ignore background color",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": [\n    {\n      \"start_time\": 12.5,\n      \"end_time\": 18.2,\n      \"score\": 0.8631,\n      \"video_bucket\": \"mavi-resource\",\n      \"video_blob\": \"VI576925607808602112.mp4\"\n    },\n    {\n      \"start_time\": 42,\n      \"end_time\": 47.8,\n      \"score\": 0.8124,\n      \"video_bucket\": \"mavi-resource\",\n      \"video_blob\": \"VI576925607808602112.mp4\"\n    }\n  ],\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "650c2ae0-e42f-457c-907e-54eac9eb719f",
+          "name": "Search from Audio",
+          "request": {
+            "name": "Search from Audio",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "search_audio_transcripts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Audio transcript search text (LIKE match). Must be non-empty."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "One-based page number. Must be > 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "100",
+                  "description": "Results per page. Range 1-500."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22a46592-5b77-42fa-a4d1-427ae14aa9df",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "search_audio_transcripts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"current_page\": 1,\n    \"page_size\": 100,\n    \"total_count\": 2,\n    \"videos\": [\n      {\n        \"videoNo\": \"VI576925607808602112\",\n        \"videoName\": \"1920447021987282945\",\n        \"startTime\": \"13\",\n        \"audio_ts\": \"... where is the love ...\",\n        \"video_bucket\": \"mavi-resource\",\n        \"video_blob\": \"VI576925607808602112.mp4\"\n      }\n    ]\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b9a9fb5-fbde-43e6-acb0-a34a94139a56",
+          "name": "Search Memories",
+          "request": {
+            "name": "Search Memories",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "memories",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filters\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "78effabf-cc60-4a42-91c1-b726b71a2770",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "memories",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"Technology\",\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filters\": {\n    \"key_0\": \"string\",\n    \"key_1\": true,\n    \"key_2\": \"string\",\n    \"key_3\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "070b48fa-e483-4eb2-ae0c-308e37b1ee54",
+          "name": "Search from Private Library",
+          "request": {
+            "name": "Search from Private Library",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"search_param\": \"<string>\",\n  \"search_type\": \"BY_CLIP\",\n  \"top_k\": 100,\n  \"filtering_level\": \"<string>\",\n  \"video_nos\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tag\": \"<string>\",\n  \"camera_tag\": \"<string>\",\n  \"datetime_taken\": \"<string>\",\n  \"latitude\": \"<double>\",\n  \"longitude\": \"<double>\",\n  \"folder_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f3d17a7-4539-480a-b826-90f0eed6fe81",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_param\": \"boat in the ocean\",\n  \"search_type\": \"BY_CLIP\",\n  \"top_k\": 100,\n  \"filtering_level\": \"medium\",\n  \"video_nos\": [\n    \"VI635764894954369024\"\n  ],\n  \"tag\": \"test1\",\n  \"camera_tag\": \"Canon EOS 5D\",\n  \"datetime_taken\": \"2025-10-20 11:00:00\",\n  \"latitude\": 88.88,\n  \"longitude\": 88.88,\n  \"folder_id\": 671631448308117500\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": [\n    {\n      \"videoNo\": \"VI576925607808602112\",\n      \"videoName\": \"1920447021987282945\",\n      \"startTime\": \"13\",\n      \"endTime\": \"18\",\n      \"audio_ts\": \"...matched transcript text...\",\n      \"score\": 0.5221236659362116,\n      \"video_bucket\": \"mavi-resource\",\n      \"video_blob\": \"VI576925607808602112.mp4\",\n      \"keyframe_bucket\": \"mavi-keyframe\",\n      \"keyframe_blob\": \"<uuid>/keyframe-000013.jpg\"\n    }\n  ],\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9569538e-000a-491b-8d3c-ecad4de54509",
+          "name": "Search from Public Video Sources",
+          "request": {
+            "name": "Search from Public Video Sources",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "search_public"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"search_param\": \"<string>\",\n  \"search_type\": \"BY_CLIP\",\n  \"type\": \"TIKTOK\",\n  \"top_k\": 100,\n  \"filtering_level\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e5fd370-9222-48ed-99e4-29dcf48444d1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "search_public"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"search_param\": \"Find sprint race with Usain Bolt\",\n  \"search_type\": \"BY_VIDEO\",\n  \"type\": \"TIKTOK\",\n  \"top_k\": 100,\n  \"filtering_level\": \"medium\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": [\n    {\n      \"videoNo\": \"PI-600947902470296459\",\n      \"videoName\": \"They played in their OPPONENTS jerseys?!?\",\n      \"startTime\": \"23\",\n      \"endTime\": \"27\",\n      \"audio_ts\": \"...matched transcript text...\",\n      \"score\": 0.7350679636001586,\n      \"video_bucket\": \"mavi-public-video\",\n      \"video_blob\": \"<scraper-id>.mp4\",\n      \"keyframe_bucket\": \"mavi-public-keyframe\",\n      \"keyframe_blob\": \"<uuid>/keyframe-000023.jpg\"\n    }\n  ],\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bee04c8-76ae-4b11-8f79-99206f5c0684",
+          "name": "Search Public Videos by Image",
+          "request": {
+            "name": "Search Public Videos by Image",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "search_public_similar_images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB."
+                },
+                {
+                  "key": "type",
+                  "value": "TIKTOK",
+                  "type": "text",
+                  "description": "Source platform to search within. (This can only be one of TIKTOK,YOUTUBE,INSTAGRAM)"
+                },
+                {
+                  "key": "similarity",
+                  "value": "0.85",
+                  "type": "text",
+                  "description": "Minimum similarity threshold (0-1). Results below this score are filtered out."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0c9bfa14-b520-42de-89c1-eef4d9243c13",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "search_public_similar_images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Query image. Allowed extensions: .jpg/.jpeg/.png/.gif/.bmp/.webp. Content-Type must start with image/. Max 20 MB.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Source platform to search within. (This can only be one of TIKTOK,YOUTUBE,INSTAGRAM)",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "TIKTOK",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Minimum similarity threshold (0-1). Results below this score are filtered out.",
+                        "type": "text/plain"
+                      },
+                      "key": "similarity",
+                      "value": "0.85",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": [\n    {\n      \"videoNo\": \"PI-600947902470296459\",\n      \"videoName\": \"Sample public video title\",\n      \"startTime\": \"79\",\n      \"endTime\": \"82\",\n      \"score\": 0.8631,\n      \"video_bucket\": \"mavi-public-video\",\n      \"video_blob\": \"<scraper-id>.mp4\",\n      \"keyframe_bucket\": \"mavi-public-keyframe\",\n      \"keyframe_blob\": \"<uuid>/keyframe-000079.jpg\"\n    },\n    {\n      \"videoNo\": \"PI-600947902470296460\",\n      \"videoName\": \"Another public video\",\n      \"startTime\": \"32\",\n      \"endTime\": \"35\",\n      \"score\": 0.8712,\n      \"video_bucket\": \"mavi-public-video\",\n      \"video_blob\": \"<scraper-id2>.mp4\",\n      \"keyframe_bucket\": \"mavi-public-keyframe\",\n      \"keyframe_blob\": \"<uuid2>/keyframe-000032.jpg\"\n    }\n  ],\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "798d3298-09fd-4b2c-9e41-f73d0af51661",
+          "name": "Upload Image from File",
+          "request": {
+            "name": "Upload Image from File",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "upload_img"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "value": "[\"<binary>\",\"<binary>\"]",
+                  "type": "text",
+                  "description": "(Required) One or more image files. Allowed extensions: .jpg, .jpeg, .png, .gif, .bmp, .webp. Content-Type must start with image/. Max 20 MB per file. Batch size capped by server configuration."
+                },
+                {
+                  "key": "datetime_taken",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Capture time in format yyyy-MM-dd HH:mm:ss."
+                },
+                {
+                  "key": "camera_model",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Camera/device model. Max 200 characters."
+                },
+                {
+                  "key": "latitude",
+                  "value": "<double>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "longitude",
+                  "value": "<double>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "tags",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "User-defined tags. Max 50. The server automatically appends an 'api' tag."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bb2e7e82-0e5c-45f4-81b3-c13d9d11898e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "upload_img"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) One or more image files. Allowed extensions: .jpg, .jpeg, .png, .gif, .bmp, .webp. Content-Type must start with image/. Max 20 MB per file. Batch size capped by server configuration.",
+                        "type": "text/plain"
+                      },
+                      "key": "files",
+                      "value": "[\"<binary>\",\"<binary>\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Capture time in format yyyy-MM-dd HH:mm:ss.",
+                        "type": "text/plain"
+                      },
+                      "key": "datetime_taken",
+                      "value": "2025-09-07 22:52:00",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Camera/device model. Max 200 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "camera_model",
+                      "value": "Canon EOS 5D",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "latitude",
+                      "value": "39.9042",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "longitude",
+                      "value": "116.4074",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "User-defined tags. Max 50. The server automatically appends an 'api' tag.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "[\"test1\",\"test2\"]",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": [\n    {\n      \"id\": 568102998803353600\n    },\n    {\n      \"id\": 568102998803353600\n    }\n  ],\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e715b992-2d7c-4060-bc76-120fc2075e50",
+          "name": "Upload Video from Platform Creator URL",
+          "request": {
+            "name": "Upload Video from Platform Creator URL",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "scraper"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"scraper_cnt\": 4,\n  \"callback_url\": \"<uri>\",\n  \"folder_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "13afe17a-756e-4096-b9a4-4fdf4a5ead3f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "scraper"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"https://www.tiktok.com/@cutshall73\",\n  \"scraper_cnt\": 4,\n  \"callback_url\": \"https://your.app/callback\",\n  \"folder_id\": 671631448308117500\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4c1bc1c-0d73-4dad-82ab-5ee804f59a2e",
+          "name": "Upload Video from File",
+          "request": {
+            "name": "Upload Video from File",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) Video file to upload. Allowed extensions: .mp4, .avi, .mkv, .mov. Content-Type must start with video/. Max size 3 GB."
+                },
+                {
+                  "key": "callback",
+                  "value": "<uri>",
+                  "type": "text",
+                  "description": "Callback URL invoked when the video moves to the parsing stage. Max 299 characters."
+                },
+                {
+                  "key": "datetime_taken",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Capture time in format yyyy-MM-dd HH:mm:ss."
+                },
+                {
+                  "key": "camera_model",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Camera/device model. Max 200 characters."
+                },
+                {
+                  "key": "latitude",
+                  "value": "<double>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "longitude",
+                  "value": "<double>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "tags",
+                  "value": "[\"<string>\",\"<string>\"]",
+                  "type": "text",
+                  "description": "User-defined tags. Max 20. The server automatically appends an 'api' tag."
+                },
+                {
+                  "key": "retain_original_video",
+                  "value": "true",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "video_transcription_prompt",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "folder_id",
+                  "value": "<integer>",
+                  "type": "text",
+                  "description": "Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "55c0d3df-841d-46f1-a666-a8e4bd2242fc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Video file to upload. Allowed extensions: .mp4, .avi, .mkv, .mov. Content-Type must start with video/. Max size 3 GB.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Callback URL invoked when the video moves to the parsing stage. Max 299 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "callback",
+                      "value": "https://your.app/callback",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Capture time in format yyyy-MM-dd HH:mm:ss.",
+                        "type": "text/plain"
+                      },
+                      "key": "datetime_taken",
+                      "value": "2025-10-20 11:00:00",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Camera/device model. Max 200 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "camera_model",
+                      "value": "Canon EOS 5D",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "latitude",
+                      "value": "66.66",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "longitude",
+                      "value": "66.66",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "User-defined tags. Max 20. The server automatically appends an 'api' tag.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "[\"test1\",\"test2\"]",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_original_video",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "video_transcription_prompt",
+                      "value": "Focus on the speaker and major scene changes.",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.",
+                        "type": "text/plain"
+                      },
+                      "key": "folder_id",
+                      "value": "671631448308117500",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"videoNo\": \"VI568102998803353600\",\n    \"videoName\": \"1be6a69f3c6e49bf986235d68807ab1f\",\n    \"videoStatus\": \"UNPARSE\",\n    \"uploadTime\": \"1744905509814\"\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a489384b-9770-4b5c-a380-6002a83c0ec6",
+          "name": "Upload Video from Hashtag",
+          "request": {
+            "name": "Upload Video from Hashtag",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "scraper_tag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hash_tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"scraper_cnt\": 2,\n  \"callback\": \"<uri>\",\n  \"folder_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "85111970-672b-4925-8b8e-94abefc424c9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "scraper_tag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hash_tags\": [\n    \"LVMH\"\n  ],\n  \"scraper_cnt\": 2,\n  \"callback\": \"https://your.app/callback\",\n  \"folder_id\": 671631448308117500\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be8a5cc0-865e-4d9a-af8f-8a65e2e5c341",
+          "name": "Upload Video from Platform URL",
+          "request": {
+            "name": "Upload Video from Platform URL",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "scraper_url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"video_urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"tiktok_post_urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"callback_url\": \"<uri>\",\n  \"quality\": \"360\",\n  \"folder_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7674dc27-5dd0-46d0-aa66-457bc3008e58",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "scraper_url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"video_urls\": [\n    \"https://www.tiktok.com/@cutshall73/video/7543017294226558221\",\n    \"https://www.tiktok.com/@abcnews/video/7543794552365124919\"\n  ],\n  \"tiktok_post_urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"callback_url\": \"https://your.app/callback\",\n  \"quality\": \"1080\",\n  \"folder_id\": 671631448308117500\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"taskId\": \"31b0fccb-d6f9-4135-922d-1e8828499812\"\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02399d21-be0a-4f74-892e-64e08eb27f6b",
+          "name": "Upload Video from URL",
+          "request": {
+            "name": "Upload Video from URL",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "upload_url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) Direct URL of the video. Must be reachable via unauthenticated HTTP GET."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<uri>",
+                  "description": "Callback URL invoked when the video moves to the parsing stage. Max 299 characters."
+                },
+                {
+                  "disabled": false,
+                  "key": "datetime_taken",
+                  "value": "<string>",
+                  "description": "Capture time in format yyyy-MM-dd HH:mm:ss."
+                },
+                {
+                  "disabled": false,
+                  "key": "camera_model",
+                  "value": "<string>",
+                  "description": "Camera/device model. Max 200 characters."
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "User-defined tags. Max 20. The server automatically appends an 'api' tag."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "User-defined tags. Max 20. The server automatically appends an 'api' tag."
+                },
+                {
+                  "disabled": false,
+                  "key": "retain_original_video",
+                  "value": "true",
+                  "description": "Whether to retain the original source video. Defaults to true."
+                },
+                {
+                  "disabled": false,
+                  "key": "video_transcription_prompt",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "folder_id",
+                  "value": "<integer>",
+                  "description": "Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8dca37df-0d47-4657-bf98-618360eaa453",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "upload_url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Direct URL of the video. Must be reachable via unauthenticated HTTP GET.",
+                        "type": "text/plain"
+                      },
+                      "key": "url",
+                      "value": "https://example.com/test_video.mp4"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Callback URL invoked when the video moves to the parsing stage. Max 299 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "callback",
+                      "value": "https://your.app/callback"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Capture time in format yyyy-MM-dd HH:mm:ss.",
+                        "type": "text/plain"
+                      },
+                      "key": "datetime_taken",
+                      "value": "2025-10-20 11:00:00"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Camera/device model. Max 200 characters.",
+                        "type": "text/plain"
+                      },
+                      "key": "camera_model",
+                      "value": "Canon EOS 5D"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "latitude",
+                      "value": "66.66"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "longitude",
+                      "value": "66.66"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "User-defined tags. Max 20. The server automatically appends an 'api' tag.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "test1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "User-defined tags. Max 20. The server automatically appends an 'api' tag.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "test2"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Whether to retain the original source video. Defaults to true.",
+                        "type": "text/plain"
+                      },
+                      "key": "retain_original_video",
+                      "value": "true"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "video_transcription_prompt",
+                      "value": "Focus on the speaker and major scene changes."
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional target folder for the upload. Omit or pass -1 for the account's Default folder (auto-created on first use). A positive id must belong to your account.",
+                        "type": "text/plain"
+                      },
+                      "key": "folder_id",
+                      "value": "671631448308117500"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"videoNo\": \"VI568102998803353600\",\n    \"videoName\": \"1be6a69f3c6e49bf986235d68807ab1f\",\n    \"videoStatus\": \"UNPARSE\",\n    \"uploadTime\": \"1744905509814\"\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de35b33b-35cf-4611-a8bb-2b559fd5b5af",
+          "name": "Video Chat",
+          "request": {
+            "name": "Video Chat",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "chat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"video_nos\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"prompt\": \"<string>\",\n  \"session_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6352e8c9-b858-419f-b4a5-9a5f15f338b2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "chat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"video_nos\": [\n    \"VI625239098370850816\"\n  ],\n  \"prompt\": \"Summarize the emotional moments in these videos\",\n  \"session_id\": \"session-123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "add14749-07a7-422c-a95c-dd7ccebc2559",
+          "name": "Video Marketer",
+          "request": {
+            "name": "Video Marketer",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "marketer_chat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"type\": \"TIKTOK\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "11eded61-8570-4c00-b667-9d067fdb2317",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "marketer_chat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"What does nike recently post?\",\n  \"session_id\": \"\",\n  \"type\": \"TIKTOK\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdca65f7-10c0-4984-919c-5afb424dbff0",
+          "name": "Get Video Caption",
+          "request": {
+            "name": "Get Video Caption",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "get_video_caption"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "video_no",
+                  "value": "<string>",
+                  "description": "(Required) The unique video ID returned by the upload API."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c4c2e08-d287-4812-b521-4fafd29ea971",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "get_video_caption"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_no",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdbb55e6-e3bf-4ac4-b329-e9c4effff728",
+          "name": "List Folders",
+          "request": {
+            "name": "List Folders",
+            "description": {
+              "content": "List all folders in your account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6535536-172e-4ee6-a4cc-a32af87f909c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"folders\": [\n      {\n        \"folder_id\": 671631448308117500,\n        \"folder_name\": \"my-project\"\n      },\n      {\n        \"folder_id\": 671631448308117500,\n        \"folder_name\": \"my-project\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c922292-56fb-41e5-8827-84d835341626",
+          "name": "Create Folder",
+          "request": {
+            "name": "Create Folder",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) Folder name. Max 100 chars, unique within your account."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7dc29a5b-cc3f-4e8e-827d-f568b6e0f3e7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Folder name. Max 100 chars, unique within your account.",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "my-project"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"folder_id\": 671631448308117500,\n    \"folder_name\": \"my-project\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffa48302-1bf1-4ccd-8141-02a256f9f258",
+          "name": "Rename Folder",
+          "request": {
+            "name": "Rename Folder",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders",
+                "rename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "folder_id",
+                  "value": "<integer>",
+                  "description": "(Required) Folder id to rename. Must be > 0 and belong to your account."
+                },
+                {
+                  "disabled": false,
+                  "key": "new_name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8f40fa0c-cddb-48eb-b168-c9362a55dcbc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Folder id to rename. Must be > 0 and belong to your account.",
+                        "type": "text/plain"
+                      },
+                      "key": "folder_id",
+                      "value": "671631448308117500"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "new_name",
+                      "value": "renamed-project"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"folder_id\": 671631448308117500,\n    \"folder_name\": \"my-project\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb08d746-7256-41af-ab32-b00ee4af3f1a",
+          "name": "Delete Folder",
+          "request": {
+            "name": "Delete Folder",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "folder_id",
+                  "value": "<integer>",
+                  "description": "(Required) Folder id to delete. Must be > 0 and belong to your account. Fails if it contains parsed videos."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "86ff6233-df1c-4fac-8f97-6e66850b6dff",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Folder id to delete. Must be > 0 and belong to your account. Fails if it contains parsed videos.",
+                        "type": "text/plain"
+                      },
+                      "key": "folder_id",
+                      "value": "671631448308117500"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b32827b-19be-4bb4-8ec7-755d465b5de1",
+          "name": "List Videos in Folder",
+          "request": {
+            "name": "List Videos in Folder",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders",
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "folder_id",
+                  "value": "<integer>",
+                  "description": "(Required) Folder to list. -1 Default folder, -2 legacy API folder, or a folder that belongs to your account."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "One-based page number."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "Items per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba34fa64-b43f-4ee5-846f-5a1ba23a321c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders",
+                    "videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "folder_id",
+                      "value": "671631448308117500"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"current_page\": 1,\n    \"page_size\": 20,\n    \"total_count\": 2,\n    \"videos\": [\n      {\n        \"video_no\": \"VI606404158946574336\",\n        \"video_name\": \"182082-867762198_tiny\",\n        \"duration\": 12,\n        \"size\": 3284512,\n        \"create_time\": 1754037217992,\n        \"status\": \"PARSE\",\n        \"cause\": \"string\",\n        \"video_url\": \"string\",\n        \"datetime_taken\": 1729388400000,\n        \"camera_model\": \"Canon EOS 5D\",\n        \"latitude\": 39.9042,\n        \"longitude\": 116.4074,\n        \"tags\": [\n          \"holiday\",\n          \"beijing\",\n          \"api\"\n        ],\n        \"bucket\": \"string\",\n        \"blob\": \"string\"\n      },\n      {\n        \"video_no\": \"VI606404158946574336\",\n        \"video_name\": \"182082-867762198_tiny\",\n        \"duration\": 12,\n        \"size\": 3284512,\n        \"create_time\": 1754037217992,\n        \"status\": \"PARSE\",\n        \"cause\": \"string\",\n        \"video_url\": \"string\",\n        \"datetime_taken\": 1729388400000,\n        \"camera_model\": \"Canon EOS 5D\",\n        \"latitude\": 39.9042,\n        \"longitude\": 116.4074,\n        \"tags\": [\n          \"holiday\",\n          \"beijing\",\n          \"api\"\n        ],\n        \"bucket\": \"string\",\n        \"blob\": \"string\"\n      }\n    ]\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9776f3d1-34cc-4402-9672-47227d560520",
+          "name": "Move Videos to Folder",
+          "request": {
+            "name": "Move Videos to Folder",
+            "description": {},
+            "url": {
+              "path": [
+                "serve",
+                "api",
+                "v1",
+                "folders",
+                "move"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"folder_id\": \"<integer>\",\n  \"video_nos\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aecd26c9-97b3-449a-8a05-288f98f1b1ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serve",
+                    "api",
+                    "v1",
+                    "folders",
+                    "move"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"folder_id\": 671631448308117500,\n  \"video_nos\": [\n    \"VI671631448308117504\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": false\n  },\n  \"success\": true,\n  \"failed\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.memories.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ee4c4b85-513b-4ed0-b422-c805ca9ad4d8",
+    "name": "Memories Platform API (Docs Mapping) Serve API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI mapping used by Mintlify Try it for the platform docs.",
+      "type": "text/plain"
+    }
+  }
+}

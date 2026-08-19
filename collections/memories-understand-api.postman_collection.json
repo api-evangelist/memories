@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "c411dd3a-9a39-4dec-831f-59c28bee442f",
+      "name": "Understand",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "582e6c0d-fc08-4b8a-8388-bd10f449cb5d",
+          "name": "Video Caption / Human Re-identification",
+          "request": {
+            "name": "Video Caption / Human Re-identification",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "understand",
+                "upload"
+              ],
+              "host": [
+                "security",
+                "memories",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"video_url\": \"<uri>\",\n  \"user_prompt\": \"<string>\",\n  \"system_prompt\": \"<string>\",\n  \"callback\": \"<uri>\",\n  \"thinking\": false,\n  \"qa\": false,\n  \"reasoning_effort\": \"<string>\",\n  \"persons\": [\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<uri>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"url\": \"<uri>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d41103ad-57b1-47fd-b19e-d92c27a46d1e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "understand",
+                    "upload"
+                  ],
+                  "host": [
+                    "security",
+                    "memories",
+                    "ai"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"video_url\": \"https://example.com/test_video.mp4\",\n  \"user_prompt\": \"Summarize the video content and identify key persons\",\n  \"system_prompt\": \"You are a video understanding system.\",\n  \"callback\": \"https://yourserver.com/callback\",\n  \"thinking\": false,\n  \"qa\": false,\n  \"reasoning_effort\": \"2\",\n  \"persons\": [\n    {\n      \"name\": \"Alice\",\n      \"url\": \"https://example.com/alice.jpg\"\n    },\n    {\n      \"name\": \"Alice\",\n      \"url\": \"https://example.com/alice.jpg\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": 2806.036299402205,\n    \"key_1\": true\n  },\n  \"success\": true,\n  \"failed\": false,\n  \"key_0\": 8671.935843589523\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "770e8577-fe3f-4bc5-91c8-b2b13794cedb",
+          "name": "Image Caption",
+          "request": {
+            "name": "Image Caption",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "understand",
+                "uploadImg"
+              ],
+              "host": [
+                "security",
+                "memories",
+                "ai"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_prompt\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"system_prompt\": \"<string>\",\n  \"thinking\": false,\n  \"qa\": false,\n  \"reasoning_effort\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7766decc-8ef7-455c-8c29-928a7e056ff0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "understand",
+                    "uploadImg"
+                  ],
+                  "host": [
+                    "security",
+                    "memories",
+                    "ai"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_prompt\": \"What's happening in this picture?\",\n  \"url\": \"https://example.com/test_image.png\",\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"system_prompt\": \"You are an image understanding system.\",\n  \"thinking\": false,\n  \"qa\": false,\n  \"reasoning_effort\": \"2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"0000\",\n  \"msg\": \"success\",\n  \"data\": {\n    \"key_0\": 2806.036299402205,\n    \"key_1\": true\n  },\n  \"success\": true,\n  \"failed\": false,\n  \"key_0\": 8671.935843589523\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.memories.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ffbc4923-017b-4940-8c49-f87bc1b44630",
+    "name": "Memories Platform API (Docs Mapping) Serve Understand API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI mapping used by Mintlify Try it for the platform docs.",
+      "type": "text/plain"
+    }
+  }
+}

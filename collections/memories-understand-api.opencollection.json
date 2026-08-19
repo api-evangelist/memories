@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memories Platform API (Docs Mapping) Serve Understand API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Understand",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Video Caption / Human Re-identification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/v1/understand/upload",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Video Caption / Human Re-identification"
+        },
+        {
+          "info": {
+            "name": "Image Caption",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/v1/understand/uploadImg",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Image Caption"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

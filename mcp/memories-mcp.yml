@@ -2,11 +2,9 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/memories-platform-openapi.json, openapi/memories-stream-understanding-openapi.json
-note: >-
-  No official hosted/remote MCP server was found for Memories.ai (the provider
-  ships an Agent Skill / OpenClaw skill and a CLI instead). The tool list below
-  is a candidate derived one-to-one from OpenAPI operations, to seed an MCP
-  server. Bearer sk-mavi- API key in the Authorization header.
+note: No official hosted/remote MCP server was found for Memories.ai (the provider ships an Agent Skill
+  / OpenClaw skill and a CLI instead). The tool list below is a candidate derived one-to-one from OpenAPI
+  operations, to seed an MCP server. Bearer sk-mavi- API key in the Authorization header.
 server:
   name: memories
   transport: http
@@ -68,3 +66,9 @@ tools:
 - name: stopStreamUnderstanding
   description: Stop an active live-stream understanding task.
   source_operation: openapi/memories-stream-understanding-openapi.json#stopStreamUnderstanding
+deployment:
+  mode: none
+  verified: derived
+  tools: 19
+  checked: '2026-08-12'
+  source: catalog MCP census

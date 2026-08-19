@@ -1,0 +1,539 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memories Platform API (Docs Mapping) Serve API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Serve",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add Memory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/memories/add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Memory"
+        },
+        {
+          "info": {
+            "name": "Get Audio Transcription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/get_audio_transcription",
+            "params": [
+              {
+                "name": "video_no",
+                "value": "",
+                "type": "query",
+                "description": "The unique video ID returned by the upload API."
+              }
+            ]
+          },
+          "docs": "Get Audio Transcription"
+        },
+        {
+          "info": {
+            "name": "Delete Videos",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/delete_videos",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Videos"
+        },
+        {
+          "info": {
+            "name": "Download Video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/download",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Download Video"
+        },
+        {
+          "info": {
+            "name": "Get Task Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/get_video_ids_by_task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "query",
+                "description": "The task ID returned by an upload or scraping request."
+              }
+            ]
+          },
+          "docs": "Get Task Status"
+        },
+        {
+          "info": {
+            "name": "List Memories",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/memories",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Memories"
+        },
+        {
+          "info": {
+            "name": "Get Video Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/get_metadata",
+            "params": [
+              {
+                "name": "video_no",
+                "value": "VI606404158946574336",
+                "type": "query",
+                "description": "Video identifier. Must be non-empty."
+              }
+            ]
+          },
+          "docs": "Get Video Metadata"
+        },
+        {
+          "info": {
+            "name": "List Videos",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/list_videos",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Videos"
+        },
+        {
+          "info": {
+            "name": "Chat with Personal Media Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/chat_personal_stream",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Chat with Personal Media Entities"
+        },
+        {
+          "info": {
+            "name": "Search Clips by Image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/search_clips_by_image",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Search Clips by Image"
+        },
+        {
+          "info": {
+            "name": "Search from Audio",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/search_audio_transcripts",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Audio transcript search text (LIKE match). Must be non-empty."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number. Must be > 0."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Range 1-500."
+              }
+            ]
+          },
+          "docs": "Search from Audio"
+        },
+        {
+          "info": {
+            "name": "Search Memories",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/memories/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search Memories"
+        },
+        {
+          "info": {
+            "name": "Search from Private Library",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search from Private Library"
+        },
+        {
+          "info": {
+            "name": "Search from Public Video Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/search_public",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search from Public Video Sources"
+        },
+        {
+          "info": {
+            "name": "Search Public Videos by Image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/search_public_similar_images",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Search Public Videos by Image"
+        },
+        {
+          "info": {
+            "name": "Upload Image from File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/upload_img",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Upload Image from File"
+        },
+        {
+          "info": {
+            "name": "Upload Video from Platform Creator URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/scraper",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload Video from Platform Creator URL"
+        },
+        {
+          "info": {
+            "name": "Upload Video from File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/upload",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Upload Video from File"
+        },
+        {
+          "info": {
+            "name": "Upload Video from Hashtag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/scraper_tag",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload Video from Hashtag"
+        },
+        {
+          "info": {
+            "name": "Upload Video from Platform URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/scraper_url",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload Video from Platform URL"
+        },
+        {
+          "info": {
+            "name": "Upload Video from URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/upload_url",
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Upload Video from URL"
+        },
+        {
+          "info": {
+            "name": "Video Chat",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/chat",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Video Chat"
+        },
+        {
+          "info": {
+            "name": "Video Marketer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/marketer_chat",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Video Marketer"
+        },
+        {
+          "info": {
+            "name": "Get Video Caption",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/get_video_caption",
+            "params": [
+              {
+                "name": "video_no",
+                "value": "",
+                "type": "query",
+                "description": "The unique video ID returned by the upload API."
+              }
+            ]
+          },
+          "docs": "Get Video Caption"
+        },
+        {
+          "info": {
+            "name": "List Folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/folders"
+          },
+          "docs": "List all folders in your account."
+        },
+        {
+          "info": {
+            "name": "Create Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/folders/create",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create Folder"
+        },
+        {
+          "info": {
+            "name": "Rename Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/folders/rename",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "folder_id",
+                  "value": ""
+                },
+                {
+                  "name": "new_name",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Rename Folder"
+        },
+        {
+          "info": {
+            "name": "Delete Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/folders/delete",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "folder_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Delete Folder"
+        },
+        {
+          "info": {
+            "name": "List Videos in Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.memories.ai/serve/api/v1/folders/videos",
+            "params": [
+              {
+                "name": "folder_id",
+                "value": "671631448308117500",
+                "type": "query",
+                "description": "Folder to list. -1 Default folder, -2 legacy API folder, or a folder that belongs to your account."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "One-based page number."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page."
+              }
+            ]
+          },
+          "docs": "List Videos in Folder"
+        },
+        {
+          "info": {
+            "name": "Move Videos to Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/serve/api/v1/folders/move",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Move Videos to Folder"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

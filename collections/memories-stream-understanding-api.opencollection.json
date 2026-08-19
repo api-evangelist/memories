@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Memories Platform API (Docs Mapping) Serve Stream Understanding API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stream Understanding",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start Stream Video Understanding",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/v1/understand/streamConnect",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Start a real-time AI analysis session on a live RTMP video stream."
+        },
+        {
+          "info": {
+            "name": "Stop Stream Video Understanding",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.memories.ai/v1/understand/stop/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "5347085a-1747-4731-bdde-3856d09502c4",
+                "type": "path",
+                "description": "The task ID returned when starting the stream"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Stop an active live-stream understanding task."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

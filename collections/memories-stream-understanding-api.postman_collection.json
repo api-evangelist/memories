@@ -1,0 +1,284 @@
+{
+  "item": [
+    {
+      "id": "948a7c20-f920-40e6-b7c8-69d2672f074a",
+      "name": "Stream Understanding",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "665dd033-a5b9-4eb3-841d-b6eacfdb7696",
+          "name": "Start Stream Video Understanding",
+          "request": {
+            "name": "Start Stream Video Understanding",
+            "description": {
+              "content": "Start a real-time AI analysis session on a live RTMP video stream.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "understand",
+                "streamConnect"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<string>\",\n  \"user_prompt\": \"<string>\",\n  \"system_prompt\": \"<string>\",\n  \"callback\": \"<string>\",\n  \"thinking\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8accced-ab9e-4234-85a3-0c74c630d917",
+              "name": "Stream started successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "understand",
+                    "streamConnect"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"rtmp://your.server:1935/live/stream\",\n  \"user_prompt\": \"What is happening right now?\",\n  \"system_prompt\": \"You are a real-time video monitoring system.\",\n  \"callback\": \"https://your.app/callback\",\n  \"thinking\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 0,\n  \"task_id\": \"5347085a-1747-4731-bdde-3856d09502c4\",\n  \"text\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6187e56-fe08-4885-95e5-e17c52d87317",
+          "name": "Stop Stream Video Understanding",
+          "request": {
+            "name": "Stop Stream Video Understanding",
+            "description": {
+              "content": "Stop an active live-stream understanding task.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "understand",
+                "stop",
+                ":task_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "task_id",
+                  "description": "(Required) The task ID returned when starting the stream"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d6ae1e4f-4df5-450e-9004-d2d604ab42e2",
+              "name": "Stream stopped successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "understand",
+                    "stop",
+                    ":task_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "task_id",
+                      "description": "(Required) The task ID returned when starting the stream"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 14,\n  \"task_id\": \"5347085a-1747-4731-bdde-3856d09502c4\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.memories.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6e06b805-f250-48f8-8f44-459b069b43a9",
+    "name": "Memories Platform API (Docs Mapping) Serve Stream Understanding API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI mapping used by Mintlify Try it for the platform docs.",
+      "type": "text/plain"
+    }
+  }
+}
