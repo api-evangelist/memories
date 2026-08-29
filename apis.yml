@@ -12,6 +12,18 @@ description: >-
   extraction). The platform authenticates with sk-mavi- API keys, bills on a
   unified per-endpoint credit model, and is HIPAA, SOC 2 Type 2, and GDPR
   compliant. It is a Seedcamp portfolio company.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 accessModel:
   pricing: unknown
