@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Memories Platform API (Docs Mapping) Serve Understand API
+  title: Memories Platform API (Docs Mapping) Understand API
   version: v1
   description: OpenAPI mapping used by Mintlify Try it for the platform docs.
 servers:
@@ -46,6 +46,35 @@ paths:
       - Understand
 components:
   schemas:
+    ImageUnderstandingRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          example: https://example.com/test_image.png
+        urls:
+          type: array
+          items:
+            type: string
+            format: uri
+        user_prompt:
+          type: string
+          example: What's happening in this picture?
+        system_prompt:
+          type: string
+          example: You are an image understanding system.
+        thinking:
+          type: boolean
+          default: false
+        qa:
+          type: boolean
+          default: false
+        reasoning_effort:
+          type: string
+          example: '2'
+      required:
+      - user_prompt
     PersonInput:
       type: object
       properties:
@@ -120,35 +149,6 @@ components:
       - video_url
       - user_prompt
       - system_prompt
-    ImageUnderstandingRequest:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-          example: https://example.com/test_image.png
-        urls:
-          type: array
-          items:
-            type: string
-            format: uri
-        user_prompt:
-          type: string
-          example: What's happening in this picture?
-        system_prompt:
-          type: string
-          example: You are an image understanding system.
-        thinking:
-          type: boolean
-          default: false
-        qa:
-          type: boolean
-          default: false
-        reasoning_effort:
-          type: string
-          example: '2'
-      required:
-      - user_prompt
   responses:
     SuccessJson:
       description: Successful response

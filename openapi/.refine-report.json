@@ -1,18 +1,61 @@
 {
   "provider": "memories",
   "sources": [
-    "memories-serve-api-openapi.yml",
-    "memories-stream-understanding-api-openapi.yml",
-    "memories-understand-api-openapi.yml"
+    "_original/memories-platform-openapi.json",
+    "_original/memories-stream-understanding-openapi.json"
   ],
   "outputs": [
     "memories-serve-api-openapi.yml",
-    "memories-stream-understanding-api-openapi.yml",
-    "memories-understand-api-openapi.yml"
+    "memories-understand-api-openapi.yml",
+    "memories-stream-understanding-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "memories-platform-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/memories/add -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/get_audio_transcription -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/delete_videos -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/download -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/get_video_ids_by_task_id -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /v1/understand/upload -> Understand",
+    "memories-platform-openapi.json: tagged paths POST /v1/understand/uploadImg -> Understand",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/memories -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/get_metadata -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/list_videos -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/chat_personal_stream -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/search_clips_by_image -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/search_audio_transcripts -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/memories/search -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/search -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/search_public -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/search_public_similar_images -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/upload_img -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/scraper -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/upload -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/scraper_tag -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/scraper_url -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/upload_url -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/chat -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/marketer_chat -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/get_video_caption -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/folders -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/folders/create -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/folders/rename -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/folders/delete -> Serve",
+    "memories-platform-openapi.json: tagged paths GET /serve/api/v1/folders/videos -> Serve",
+    "memories-platform-openapi.json: tagged paths POST /serve/api/v1/folders/move -> Serve",
+    "memories-platform-openapi.json: declared missing tag: Serve",
+    "memories-platform-openapi.json: declared missing tag: Understand",
+    "memories-stream-understanding-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "memories-stream-understanding-openapi.json: declared missing tag: Stream Understanding",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "memories-serve-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memories-stream-understanding-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "memories-understand-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

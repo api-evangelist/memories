@@ -1,0 +1,30 @@
+# Front Door AI Index — memories — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: memories
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: memories.ai
+  final_host: memories.ai
+  ownership: own
+  owner: memories
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 11
+  host_score: 11
+  density: 15.15
+  words: 726
+  tiers:
+    agentic: 4
+    core: 7
+    model: 0
+  ambiguous: 7
+  top_terms:
+    AI: 7
+    intelligence: 4
+    agentic: 2
+    automation: 2
+    inference: 2
+    agent: 1
