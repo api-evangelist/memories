@@ -46,35 +46,6 @@ paths:
       - Understand
 components:
   schemas:
-    ImageUnderstandingRequest:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-          example: https://example.com/test_image.png
-        urls:
-          type: array
-          items:
-            type: string
-            format: uri
-        user_prompt:
-          type: string
-          example: What's happening in this picture?
-        system_prompt:
-          type: string
-          example: You are an image understanding system.
-        thinking:
-          type: boolean
-          default: false
-        qa:
-          type: boolean
-          default: false
-        reasoning_effort:
-          type: string
-          example: '2'
-      required:
-      - user_prompt
     PersonInput:
       type: object
       properties:
@@ -87,34 +58,6 @@ components:
           example: https://example.com/alice.jpg
       required:
       - name
-    GenericJsonResponse:
-      type: object
-      properties:
-        code:
-          type:
-          - string
-          - integer
-          example: '0000'
-        msg:
-          type: string
-          example: success
-        data:
-          oneOf:
-          - type: object
-            additionalProperties: true
-          - type: array
-            items:
-              type: object
-              additionalProperties: true
-          - type: string
-          - type: 'null'
-        success:
-          type: boolean
-          example: true
-        failed:
-          type: boolean
-          example: false
-      additionalProperties: true
     VideoUnderstandingRequest:
       type: object
       properties:
@@ -149,6 +92,63 @@ components:
       - video_url
       - user_prompt
       - system_prompt
+    GenericJsonResponse:
+      type: object
+      properties:
+        code:
+          type:
+          - string
+          - integer
+          example: '0000'
+        msg:
+          type: string
+          example: success
+        data:
+          oneOf:
+          - type: object
+            additionalProperties: true
+          - type: array
+            items:
+              type: object
+              additionalProperties: true
+          - type: string
+          - type: 'null'
+        success:
+          type: boolean
+          example: true
+        failed:
+          type: boolean
+          example: false
+      additionalProperties: true
+    ImageUnderstandingRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          example: https://example.com/test_image.png
+        urls:
+          type: array
+          items:
+            type: string
+            format: uri
+        user_prompt:
+          type: string
+          example: What's happening in this picture?
+        system_prompt:
+          type: string
+          example: You are an image understanding system.
+        thinking:
+          type: boolean
+          default: false
+        qa:
+          type: boolean
+          default: false
+        reasoning_effort:
+          type: string
+          example: '2'
+      required:
+      - user_prompt
   responses:
     SuccessJson:
       description: Successful response
