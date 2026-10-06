@@ -69,7 +69,7 @@ tags_raw:
 - Machine Learning
 - Machine-Learning
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -107,6 +107,8 @@ apis:
   - type: OpenAPI
     url: openapi/memories-understand-api-openapi.yml
 common:
+- url: https://memories.ai/blogs
+  type: Blog
 - type: TrustCenter
   url: security/memories-trust-center.yml
 - type: DeveloperPortal
