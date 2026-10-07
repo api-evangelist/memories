@@ -1,0 +1,114 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://docs.memories.ai/visual-search/pricing
+sources:
+- https://docs.memories.ai/visual-search/pricing
+- https://api-tools.memories.ai/visual-search/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+  managed_tier: Priced Tier
+published: true
+note: Credit/usage-based API pricing page. Volume discounts and enterprise pricing require contacting
+  support. Failed requests do not consume credits.
+plan_count: 15
+currency: USD
+plans:
+- name: Free Trial
+  price_text: 100 free credits
+  price: 100
+  period: one-time
+  unit: credits
+  included_quota: Credits can be used across all Visual Search API endpoints with no restrictions
+  overage: Once your free credits are exhausted, API access is paused until you recharge.
+- name: Test Tier (Free)
+  price_text: Free
+  period: per-use
+  unit: all services
+  included_quota: Contact enterprise sales to apply for a test tier account.
+- name: Priced Tier — Index to search
+  price_text: $15
+  price: 15
+  currency: USD
+  period: per-use
+  unit: Per 1,000 minutes
+- name: Priced Tier — Index to chat
+  price_text: $15
+  price: 15
+  currency: USD
+  period: per-use
+  unit: Per 1,000 minutes
+- name: Priced Tier — Video transcription
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: Per 1,000 queries
+- name: Priced Tier — Audio transcription
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: Per 1,000 queries
+- name: Priced Tier — Update video transcription
+  price_text: ~$0.10 (based on token usage)
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: Per 1,000 seconds
+- name: Priced Tier — Search
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: Per 1,000 queries
+- name: Priced Tier — Storage
+  price_text: $0.03
+  price: 0.03
+  currency: USD
+  period: month
+  unit: Per GB / month
+- name: Priced Tier — Upload from YouTube URLs
+  price_text: $2.20 (based on data transfer)
+  price: 2.2
+  currency: USD
+  period: per-use
+  unit: Per GB
+- name: Priced Tier — Upload from TikTok URLs
+  price_text: $0.002
+  price: 0.002
+  currency: USD
+  period: per-use
+  unit: Per video
+- name: Priced Tier — Upload from Instagram URLs
+  price_text: $0.002
+  price: 0.002
+  currency: USD
+  period: per-use
+  unit: Per video
+- name: Priced Tier — Video download
+  price_text: $0.12
+  price: 0.12
+  currency: USD
+  period: per-use
+  unit: Per GB
+- name: Priced Tier — Text memory (add / update)
+  price_text: $0.22
+  price: 0.22
+  currency: USD
+  period: per-use
+  unit: Per 1M tokens
+- name: Priced Tier — Text memory (search)
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: Per 1K searches
