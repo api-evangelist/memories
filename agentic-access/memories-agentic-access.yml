@@ -1,17 +1,18 @@
-generated: '2026-07-20'
+generated: '2026-09-23'
 method: generated
-source: openapi/memories-platform-openapi.json, openapi/memories-stream-understanding-openapi.json
+source: openapi/memories-serve-api-openapi.yml, openapi/memories-stream-understanding-api-openapi.yml,
+  openapi/memories-understand-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 34
   by_action_class:
-    acting: 27
-    connected: 7
+    acting: 20
+    connected: 14
   by_consequence:
-    write: 26
-    read: 7
+    write: 19
+    read: 14
     safety-critical: 1
   human_in_the_loop_required: 1
 operations:
@@ -83,54 +84,16 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /v1/understand/upload
-  method: post
-  operationId: video_caption_upload
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /v1/understand/uploadImg
-  method: post
-  operationId: image_caption_upload
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /serve/api/v1/memories
   method: post
   operationId: list_memories
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/get_metadata
   method: get
   operationId: get_video_metadata
@@ -145,18 +108,12 @@ operations:
   method: post
   operationId: list_videos
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/chat_personal_stream
   method: post
   operationId: chat_personal_stream
@@ -177,18 +134,12 @@ operations:
   method: post
   operationId: search_clips_by_image
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/search_audio_transcripts
   method: get
   operationId: search_audio_transcripts
@@ -203,66 +154,42 @@ operations:
   method: post
   operationId: search_memories
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/search
   method: post
   operationId: search_private_library
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/search_public
   method: post
   operationId: search_public_library
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/search_public_similar_images
   method: post
   operationId: search_public_similar_images
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /serve/api/v1/upload_img
   method: post
   operationId: upload_image_from_file
@@ -516,4 +443,36 @@ operations:
       proof-of-possession: true
     escalation:
       human-in-the-loop: required
+    audit: required
+- path: /v1/understand/upload
+  method: post
+  operationId: video_caption_upload
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/understand/uploadImg
+  method: post
+  operationId: image_caption_upload
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
     audit: required
