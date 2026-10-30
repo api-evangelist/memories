@@ -64,6 +64,141 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Memories is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Memories.ai (MAVI) is a video-intelligence platform that turns raw video into searchable, agent-ready understanding. It ships three products on a shared video-understanding stack: Visual Intelligence (stateless REST APIs for transcription, captioning, frame description, embeddings, social-media scraping, and real-time audio/video stream moderation via VLMs such as Gemini, Nova, and Qwen), Visual Search (an auto-indexed private and public video/image library searchable by text, image, or transcript), and Visual Agents (pre-built workflows for video search, AI video editing, and screenplay extraction). The platform authenticates with sk-mavi- API keys, bills on a unified per-endpoint credit model, and is HIPAA, SOC 2 Type 2, and GDPR compliant. It is a Seedcamp portfolio company.
 
-Backed by: seedcamp — http://memories.ai
+**Areas:** Company · Video Intelligence · Video Understanding · Video Search · Transcription · Embeddings · Multimodal AI · Content Moderation · AI Agents · Machine Learning
+
+## Memories on APIs.io
+
+Everything profiled for Memories is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/memories/](https://apis.io/providers/memories/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [Memories Serve API](https://apis.io/apis/memories/memories-serve-api/) — The Serve API from Memories — 30 operation(s) for serve.
+- [Memories Stream Understanding API](https://apis.io/apis/memories/memories-stream-understanding-api/) — The Stream Understanding API from Memories — 2 operation(s) for stream understanding.
+- [Memories Understand API](https://apis.io/apis/memories/memories-understand-api/) — The Understand API from Memories — 2 operation(s) for understand.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Memories Webhooks](https://apis.io/asyncapis/memories/memories-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [memories](https://apis.io/servers/memories/memories/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Memories Agentic Access](https://apis.io/agentic-access/memories/memories-agentic-access/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Memories Platform API (Docs Mapping) Serve API](https://apis.io/collections/memories/open-memories-serve-api/)
+- [Memories Platform API (Docs Mapping) Serve Stream Understanding API](https://apis.io/collections/memories/open-memories-stream-understanding-api/)
+- [Memories Platform API (Docs Mapping) Serve Understand API](https://apis.io/collections/memories/open-memories-understand-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Memories Platform Overlay](https://apis.io/overlays/memories/memories-platform-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Memories Authentication](https://apis.io/security/memories/memories-authentication/)
+- [Memories Domain Security](https://apis.io/security/memories/memories-domain-security/)
+- [Memories Trust Center](https://apis.io/security/memories/memories-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Memories Plans Pricing](https://apis.io/plans/memories/memories-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Memories Rate Limits](https://apis.io/rate-limits/memories/memories-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](http://memories.ai)
+- [Documentation](https://api-tools.memories.ai/)
+- [Getting started](https://api-tools.memories.ai/visual-intelligence/getting-started/introduction)
+- [API reference](https://api-tools.memories.ai/visual-intelligence/getting-started/overview)
+- [Pricing](https://api-tools.memories.ai/visual-search/pricing)
+- [Sign up](https://api-platform.memories.ai/)
+- [Blog](https://memories.ai/blogs)
+- [Compliance](https://memories.ai/security)
+- [GitHub](https://github.com/Memories-ai-labs)
+
+## API Evangelist rating
+
+**Kin Score 51.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 55.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 57.9 |
+
+**Agent readiness 34.5** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 20.0** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/memories/](https://apis.io/providers/memories/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Memories: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/memories/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
